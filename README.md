@@ -1,9 +1,9 @@
-# Dotfiles
+# My dotfiles 
 
 ---
 
-Here are my dotfiles. Feel free to use anything you like :-). 
-I am using Stow to organize all the dotfiles. 
+Feel free to use anything you like :-). 
+ 
+I am using Stow to manage the dotfiles. 
 
-(I will add them whenever i feel ready).
 
