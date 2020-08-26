@@ -108,8 +108,11 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export HIST_IGNORE_DUPS
 export BROWSER=firefox
+
+# NNN Settings
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='p:preview_tabbed'
+export NNN_COLORS='1234'
 
 # Aliases
 alias zshconfig="$EDITOR ~/.zshrc"

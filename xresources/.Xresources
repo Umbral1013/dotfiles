@@ -1,0 +1,13 @@
+! Sxiv
+Sxiv.font: IBM Plex Mono 
+Sxiv.background: black
+Sxiv.foreground: #C0C0C0 
+
+! Font rendering
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: false
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
