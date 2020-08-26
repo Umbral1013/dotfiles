@@ -131,7 +131,6 @@ export LANG=es_MX.UTF-8
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export HIST_IGNORE_DUPS
-export BROWSER=surf
 export TERM="st-256color"    
 
 # NNN Settings

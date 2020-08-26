@@ -1,5 +1,3 @@
 # My dotfiles 
 
-Feel free to use anything you like :-). 
- 
-I am using Stow to manage the dotfiles. 
+Here are my dotfiles... I don't have anything else to say.
