@@ -103,11 +103,36 @@ export LANG=es_MX.UTF-8
 # For a full list of active aliases, run `alias`.
 #
 
+# Functions
+   ## Extraction function. Usage: 'ex <file-name>'
+	ex ()
+	{
+	  if [ -f $1 ] ; then
+	    case $1 in
+	      *.tar.bz2)   tar xjf $1   ;;
+	      *.tar.gz)    tar xzf $1   ;;
+	      *.bz2)       bunzip2 $1   ;;
+	      *.rar)       unrar x $1     ;;
+	      *.gz)        gunzip $1    ;;
+	      *.tar)       tar xf $1    ;;
+	      *.tbz2)      tar xjf $1   ;;
+	      *.tgz)       tar xzf $1   ;;
+	      *.zip)       unzip $1     ;;
+	      *.Z)         uncompress $1;;
+	      *.7z)        7z x $1      ;;
+	      *)           echo "'$1' cannot be extracted via ex()" ;;
+	    esac
+	  else
+	    echo "'$1' is not a valid file"
+	  fi
+	}
+
 # Exports
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export HIST_IGNORE_DUPS
-export BROWSER=firefox
+export BROWSER=surf
+export TERM="st-256color"    
 
 # NNN Settings
 export NNN_FIFO=/tmp/nnn.fifo
@@ -127,6 +152,8 @@ alias grep="grep --color=auto"
 alias ckube="/home/alexis/Documentos/scripts_y_código/ckube/ckube"
 alias nnn="nnn -e"
 alias fetch="/home/alexis/Documentos/scripts_y_código/fet.sh/fet.sh"
+alias more="less"
+alias df="df -h"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -20,7 +20,7 @@
 	syntax on
 	set noswapfile
 	set mouse=a
-	set visualbell	                                "Blink cursor on error instead of making a demonic noise.
+	set visualbell	                                "Blink entire screen on error instead of making a demonic noise.
 	set encoding=utf-8	                        "Set the encoding to UTF-8.
 	set fileencoding=utf-8        			"The encoding written to file.
 	set laststatus=2              			"Status bar.
@@ -39,6 +39,12 @@
 	set noswapfile					"Turn backups off.                                  
 	set wrap					"Wrap lines.
 	set ignorecase					"Ignore case when searching.
+	set cursorline					"Underline before current line.
+
+" Highlight current line function.
+	:hi CursorLine   cterm=NONE ctermbg=white ctermfg=black guibg=darkred guifg=white
+	:hi CursorColumn cterm=NONE ctermbg=white ctermfg=black guibg=darkred guifg=white
+	:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 " Autocommands
 	autocmd BufRead *.md Goyo			"Execute Goyo when opening MarkDown files.
@@ -69,7 +75,8 @@
 	let g:nord_italic = 1
 	let g:nord_italic_comments = 1
 	let g:nord_underline = 1
-	
+	let g:nord_cursor_line_number_background = 1
+
 " Choose your theme 
 	set background=dark
 	colorscheme nord
