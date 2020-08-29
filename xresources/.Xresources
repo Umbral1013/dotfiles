@@ -1,5 +1,5 @@
 ! Sxiv
-Sxiv.font: IBM Plex Mono 
+Sxiv.font: monospace 
 Sxiv.background: black
 Sxiv.foreground: #C0C0C0 
 
