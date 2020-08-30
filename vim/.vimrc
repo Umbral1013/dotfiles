@@ -10,7 +10,7 @@
 	Plug 'junegunn/goyo.vim'
 	Plug 'vim-airline/vim-airline'
 	Plug 'junegunn/limelight.vim'
-	Plug 'arcticicestudio/nord-vim'
+    Plug 'arcticicestudio/nord-vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 	call plug#end()
@@ -21,7 +21,7 @@
 	   syntax on
 	   set noerrorbells 				    "No sound or visual effect if error.
 	   set showcmd                   		"Last line.
-	   set ruler					        "Always show current position.
+	   set cursorline                       "Always show current position.
 	   set cmdheight=1		  		        "Height of the command bar.
 	   set hlsearch					        "Highlight search results.
 	   set foldcolumn=1				        "Add a bit extra margin to the left.
