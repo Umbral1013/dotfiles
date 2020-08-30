@@ -134,25 +134,41 @@ export HIST_IGNORE_DUPS
 export TERM="st-256color"    
 
 # NNN Settings
-export NNN_FIFO=/tmp/nnn.fifo
-export NNN_PLUG='p:preview_tabbed'
+export NNN_FIFO='/tmp/nnn.fifo'
+export NNN_PLUG='p:preview_tabbed;n:nuke'
 export NNN_COLORS='1234'
+export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
+export NNN_LOCKER='cmatrix'
+export NNN_OPENER='/home/alexis/.config/nnn/plugins/nuke'
+
+# Man in colors
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}
 
 # Aliases
 alias zshconfig="$EDITOR ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias notes="$EDITOR /home/alexis/Documentos/sync/textos1/notas/notas.md"
-alias rm="rm -i"
+alias rm="rm -I"
 alias mv="mv -i"
 alias cp="cp -i"
-alias ls="ls --color -lah"
+alias ls="ls --color=auto -hal"
 alias cr="clear"
 alias grep="grep --color=auto"
 alias ckube="/home/alexis/Documentos/scripts_y_código/ckube/ckube"
-alias nnn="nnn -e"
+alias nnn="nnn -c"
 alias fetch="/home/alexis/Documentos/scripts_y_código/fet.sh/fet.sh"
 alias more="less"
 alias df="df -h"
+alias ping='ping -c 5'
+alias dmesg='dmesg -HL'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
