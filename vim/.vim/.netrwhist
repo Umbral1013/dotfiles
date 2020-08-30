@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/alexis/.cache/zsh/history'
+let g:netrw_dirhist_1='/home/alexis/.config/zsh'
+let g:netrw_dirhist_0='/home/alexis/.cache/zsh/history'
 let g:netrw_dirhist_9='/home/alexis/Imágenes/wallpapers'
 let g:netrw_dirhist_8='/home/alexis/.vim'
 let g:netrw_dirhist_7='/home/alexis/Imágenes/wallpapers'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_6='/home/alexis/Imágenes'
 let g:netrw_dirhist_5='/home/alexis/Imágenes/wallpapers'
 let g:netrw_dirhist_4='/home/alexis/Imágenes'
 let g:netrw_dirhist_3='/home/alexis/Imágenes/wallpapers'
-let g:netrw_dirhist_2='/home/alexis/Imágenes'
-let g:netrw_dirhist_1='/home/alexis/Imágenes/wallpapers'
-let g:netrw_dirhist_0='/home/alexis/Imágenes'

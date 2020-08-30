@@ -48,13 +48,13 @@
 	   set incsearch				        "While you're searching you get results.
 
 " Autocommands
-	autocmd FileType markdown Goyo			"Execute Goyo when opening MarkDown files.
+	autocmd BufRead *.md Goyo			    "Execute Goyo when opening MarkDown files.
 
 " Limelight options
    "Color name (:help cterm-colors) or ANSI code
 	   let g:limelight_conceal_ctermfg	= 'DarkGray'
 	   let g:limelight_default_coefficient = 0.8
-	   autocmd! User GoyoEnter Limelight		"Integration with Goyo
+	   autocmd! User GoyoEnter Limelight	"Integration with Goyo
 	   autocmd! User GoyoLeave Limelight!
 
 " Gruvbox options and enable/disable.
