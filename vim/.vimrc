@@ -26,6 +26,7 @@
 	   set hlsearch					        "Highlight search results.
 	   set foldcolumn=1				        "Add a bit extra margin to the left.
        set nowrap					        "If a line goes off screen, it won't appear on the other side.
+       hi CursorLine cterm=NONE ctermbg=257
 	      "Replace tabs with spaces.
 	      set tabstop=4 softtabstop=4
 	      set shiftwidth=4
