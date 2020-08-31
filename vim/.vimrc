@@ -56,18 +56,6 @@
 	   let g:limelight_default_coefficient = 0.8
 	   autocmd! User GoyoEnter Limelight	"Integration with Goyo
 	   autocmd! User GoyoLeave Limelight!
-
-" Gruvbox options and enable/disable.
-	let g:gruvbox_bold = '1'
-	let g:gruvbox_italic = '1'
-	let g:gruvbox_underline = '1'
-	let g:gruvbox_undercurl = '1'
-	let g:gruvbox_termcolors = '1'
-	let g:gruvbox_italicize_comments = '1'
-	let g:gruvbox_contrast_dark = 'medium'
-	let g:gruvbox_italicize_strings = '1'
-	let g:gruvbox_invert_selection = '1'
-	let g:gruvbox_improved_warnings = '1'
 	
 " Nord options to enable and disable.
 	let g:nord_uniform_diff_background = 1

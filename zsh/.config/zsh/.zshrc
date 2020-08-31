@@ -74,6 +74,11 @@ bindkey -e
     export VISUAL=vim
     export EDITOR="$VISUAL"
     export TERM="st-256color"    
+        ## Moving Android to xdg-base directories.
+          export ANDROID_SDK_HOME='$HOME/.config/android'
+          export ANDROID_AVD_HOME='$HOME/.local/share/android'
+          export ANDROID_EMULATOR_HOME='$HOME/.local/share/android'
+          export ABD_VENDOR_KEY='$HOME/.config/android'
 
 # NNN Settings
     export NNN_FIFO='/tmp/nnn.fifo'
