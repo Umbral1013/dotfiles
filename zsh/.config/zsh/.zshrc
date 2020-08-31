@@ -2,7 +2,7 @@
 
 zstyle ':completion:*' completer _complete _ignored _correct _approximate
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
-zstyle :compinstall filename '/home/alexis/.config/zsh/.zshrc'
+zstyle :compinstall filename '$HOME/.config/zsh/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -77,24 +77,24 @@ bindkey -e
 
 # NNN Settings
     export NNN_FIFO='/tmp/nnn.fifo'
-    export NNN_PLUG='p:preview_tabbed;n:nuke'
+    export NNN_PLUG='p:preview_tabbed;n:nuke;w:wall'
     export NNN_COLORS='1234'
     export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
     export NNN_LOCKER='cmatrix'
-    export NNN_OPENER='/home/alexis/.config/nnn/plugins/nuke'
+    export NNN_OPENER='$HOME/.config/nnn/plugins/nuke'
+    alias nnn="nnn -cx"
 
 # Aliases
     alias zshconfig="$EDITOR $ZDOTDIR/.zshrc"
-    alias notes="$EDITOR /home/alexis/Documentos/sync/textos1/notas/notas.md"
+    alias notes="$EDITOR $HOME/Documentos/sync/textos1/notas/notas.md"
     alias rm="rm -I"
     alias mv="mv -i"
     alias cp="cp -i"
     alias ls="ls --color=auto -hal"
     alias grep="grep --color=auto"
-    alias ckube="/home/alexis/Documentos/scripts_y_código/ckube/ckube"
-    alias nnn="nnn -c"
-    alias fetch="/home/alexis/Documentos/scripts_y_código/fet.sh/fet.sh"
-    alias more="less"
+    alias ckube="$HOME/Documentos/scripts_y_código/ckube/ckube"
+    alias fetch="$HOME/Documentos/scripts_y_código/fet.sh/fet.sh"
+    alias more="less -R"
     alias df="df -h"
     alias ping='ping -c 5'
     alias dmesg='dmesg -HL'
@@ -110,9 +110,9 @@ bindkey -e
 
 # Plugins.
     ## Spaceship promopt.
-      source /home/alexis/.config/zsh/plugins/spaceship-prompt/spaceship.zsh
+      source $HOME/.config/zsh/plugins/spaceship-prompt/spaceship.zsh
     ## Zsh suggestions.
-      source /home/alexis/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+      source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     ## Zsh syntax highlighting.
-      source /home/alexis/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+      source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
