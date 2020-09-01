@@ -79,6 +79,14 @@ bindkey -e
           export ANDROID_AVD_HOME='$HOME/.local/share/android'
           export ANDROID_EMULATOR_HOME='$HOME/.local/share/android'
           export ABD_VENDOR_KEY='$HOME/.config/android'
+        ## Move Steam savegames to xdg-base directories
+          export RENPY='$HOME/.config/renpy/'
+        ## Move Pico-8 config files to zdg-base directories.
+          export LEXALOFFLE='$HOME/.config/lexaloffle'
+        ## Move java config files to xdg-base directories.
+          export _JAVA_OPTIONS=-Djava.util.prefs.userRoot='$HOME/.config/java'
+        ## Move minetest config files to xdg-base directories.
+          export MINETEST='$HOME/.config/minetest'
 
 # NNN Settings
     export NNN_FIFO='/tmp/nnn.fifo'
