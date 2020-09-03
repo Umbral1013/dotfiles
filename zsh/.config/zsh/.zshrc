@@ -34,6 +34,11 @@ bindkey -e
           setopt EXTENDED_HISTORY
         ### Ignore all duplicates.
           setopt HIST_IGNORE_ALL_DUPS
+    ## Load the prompt
+      fpath+=$HOME/.config/zsh/plugins/pure
+      autoload -Uz promptinit ; promptinit
+        ### Load redhat theme
+          prompt pure 
 
 # Functions
    ## Extraction function. Usage: 'ex <file-name>'
@@ -85,9 +90,8 @@ bindkey -e
     export NNN_PLUG='p:preview_tabbed;n:nuke;w:wall'
     export NNN_COLORS='1234'
     export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
-    export NNN_LOCKER='cmatrix'
-    export NNN_OPENER='$HOME/.config/nnn/plugins/nuke'
-    alias nnn="nnn -cx"
+    export NNN_OPENER='/home/alexis/.config/nnn/plugins/nuke'
+    alias nnn="nnn -c"
 
 # Aliases
     alias zshconfig="$EDITOR $ZDOTDIR/.zshrc"
@@ -115,7 +119,7 @@ bindkey -e
 
 # Plugins.
     ## Spaceship promopt.
-      source $HOME/.config/zsh/plugins/spaceship-prompt/spaceship.zsh
+#      source $HOME/.config/zsh/plugins/spaceship-prompt/spaceship.zsh
     ## Zsh suggestions.
       source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     ## Zsh syntax highlighting.
