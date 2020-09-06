@@ -87,10 +87,12 @@ bindkey -e
 
 # NNN Settings
     export NNN_FIFO='/tmp/nnn.fifo'
-    export NNN_PLUG='p:preview_tabbed;n:nuke;w:wall'
+    export NNN_PLUG='n:nuke;w:wall;i:imgview'
     export NNN_COLORS='1234'
     export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
     export NNN_OPENER='/home/alexis/.config/nnn/plugins/nuke'
+    export NNN_BMS='d:$HOME/Documentos;D:$HOME/Descargas;i:$HOME/Imágenes'
+    export NNN_TRASH=1
     alias nnn="nnn -c"
 
 # Aliases
@@ -110,6 +112,10 @@ bindkey -e
     alias sc='source $ZDOTDIR/.zshrc'
     alias ~='cd ~'
     alias ..='cd ..'
+    alias df='df -H'
+    alias du='du -sh'
+    #alias zathura='devour zathura'
+    #alias sxiv='devour sxiv'
     ## Git aliases
       alias ga='git add'
       alias gs='git status'
@@ -121,7 +127,22 @@ bindkey -e
     ## Spaceship promopt.
 #      source $HOME/.config/zsh/plugins/spaceship-prompt/spaceship.zsh
     ## Zsh suggestions.
-      source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+     # source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     ## Zsh syntax highlighting.
-      source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+     # source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Antigen plugins.
+    ## Don't show weird messages.
+      ANTIGEN_MUTEX=false
+    ## Load Antigen.
+      source $HOME/.config/zsh/antigen.zsh
+      ## Syntax highlighting.
+        antigen bundle zsh-users/zsh-syntax-highlighting
+      ## Suggestions.
+        antigen bundle zsh-users/zsh-autosuggestions
+      ## Theme.
+      antigen bundle reobin/typewritten
+        ### Change the cursor symbol.
+          TYPEWRITTEN_CURSOR="beam"
+      ## Apply changes.
+      antigen apply
