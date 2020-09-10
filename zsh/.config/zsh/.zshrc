@@ -34,11 +34,8 @@ bindkey -e
           setopt EXTENDED_HISTORY
         ### Ignore all duplicates.
           setopt HIST_IGNORE_ALL_DUPS
-    ## Load the prompt
-      fpath+=$HOME/.config/zsh/plugins/pure
-      autoload -Uz promptinit ; promptinit
-        ### Load redhat theme
-          prompt pure 
+    ## Auto change directory.
+      setopt AUTO_CD
 
 # Functions
    ## Extraction function. Usage: 'ex <file-name>'
@@ -114,22 +111,12 @@ bindkey -e
     alias ..='cd ..'
     alias df='df -H'
     alias du='du -sh'
-    #alias zathura='devour zathura'
-    #alias sxiv='devour sxiv'
     ## Git aliases
       alias ga='git add'
       alias gs='git status'
       alias gc='git commit -m'
       alias gpush='git push'
       alias gpull='git pull'
-
-# Plugins.
-    ## Spaceship promopt.
-#      source $HOME/.config/zsh/plugins/spaceship-prompt/spaceship.zsh
-    ## Zsh suggestions.
-     # source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-    ## Zsh syntax highlighting.
-     # source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Antigen plugins.
     ## Don't show weird messages.
@@ -140,9 +127,6 @@ bindkey -e
         antigen bundle zsh-users/zsh-syntax-highlighting
       ## Suggestions.
         antigen bundle zsh-users/zsh-autosuggestions
-      ## Theme.
-      antigen bundle reobin/typewritten
-        ### Change the cursor symbol.
-          TYPEWRITTEN_CURSOR="beam"
-      ## Apply changes.
+      ## Prompt theme.
+        antigen bundle denysdovhan/spaceship-prompt
       antigen apply
