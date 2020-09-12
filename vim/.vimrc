@@ -9,7 +9,8 @@
 " Declare the list of plugins.
 	Plug 'junegunn/goyo.vim'
 	Plug 'junegunn/limelight.vim'
-    Plug 'arcticicestudio/nord-vim'
+  Plug 'morhetz/gruvbox'
+  Plug 'sheerun/vim-polyglot'
 
 " List ends here. Plugins become visible to Vim after this call.
 	call plug#end()
@@ -33,21 +34,21 @@
 
    " Functionality
 	   set undodir=~/.vim/undodir					        "Write the undo's in a file inside o a folder.
-	   set undofile											"The file from above.
-	   set mouse=a											"Allow mouse input.
-	   set encoding=utf-8	                                "Set the encoding to UTF-8.
-	   set fileencoding=utf-8							    "The encoding written to file.
-	   set autoread											"Set to auto read when a file is changed from the outside.
-	   set smartcase										"When searching, try to be smart about cases.
+	   set undofile												"The file from above.
+	   set mouse=a								  			"Allow mouse input.
+	   set encoding=utf-8	                "Set the encoding to UTF-8.
+	   set fileencoding=utf-8			   	    "The encoding written to file.
+	   set autoread												"Set to auto read when a file is changed from the outside.
+	   set smartcase									  	"When searching, try to be smart about cases.
 	   set smartindent										"Try to be smart about indenting.
-	   set ffs=unix,dos,mac							    	"Use Unix as the standard file type.
-	   set nobackup											"Turn backups off.
-	   set noswapfile										"Turn swapfiles off.                                  
-	   set ignorecase										"Ignore case when searching.
-	   set incsearch										"While you're searching you get results.
+	   set ffs=unix,dos,mac						  	"Use Unix as the standard file type.
+	   set nobackup												"Turn backups off.
+	   set noswapfile											"Turn swapfiles off.                                  
+	   set ignorecase											"Ignore case when searching.
+	   set incsearch											"While you're searching you get results.
 
 " Autocommands
-	autocmd FileType markdown Goyo			    				"Execute Goyo when opening MarkDown files.
+	autocmd BufRead *.md Goyo							"Execute Goyo when opening MarkDown files.
 
 " Limelight options
    "Color name (:help cterm-colors) or ANSI code
@@ -55,6 +56,14 @@
 	   let g:limelight_default_coefficient = 0.8
 	   autocmd! User GoyoEnter Limelight	                "Integration with Goyo
 	   autocmd! User GoyoLeave Limelight!
+
+" Gruvbox options
+    let g:gruvbox_bold          = '1'
+    let g:gruvbox_italic        = '1'
+    let g:gruvbox_underline     = '1'
+    let g:gruvbox_termcolors    = '256'
+    let g:gruvbox_contrast_dark = 'medium'
+    let g:gruvbox_hls_color     = 'orange'
 	
 " Nord options to enable and disable.
 	let g:nord_uniform_diff_background = 1
@@ -64,7 +73,7 @@
 	let g:nord_underline = 1
 
 " Choose your theme 
-		colorscheme nord 
+		colorscheme gruvbox 
 		set background=dark
 
 		" Enable true color 启用终端24位色

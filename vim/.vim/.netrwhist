@@ -1,12 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/alexis/dotfiles/redshift/.config/redshift'
+let g:netrw_dirhist_8='/home/alexis/dotfiles/redshift/.config'
+let g:netrw_dirhist_7='/home/alexis/dotfiles/redshift'
+let g:netrw_dirhist_6='/home/alexis/dotfiles'
 let g:netrw_dirhist_5='/home/alexis/.config/ranger'
 let g:netrw_dirhist_4='/home/alexis/.local/share/applications'
 let g:netrw_dirhist_3='/home/alexis/Documentos/scripts_y_código/pruebas-en-c'
 let g:netrw_dirhist_2='/home/alexis/.cache/zsh/history'
 let g:netrw_dirhist_1='/home/alexis/.config/zsh'
 let g:netrw_dirhist_0='/home/alexis/.cache/zsh/history'
-let g:netrw_dirhist_9='/home/alexis/Imágenes/wallpapers'
-let g:netrw_dirhist_8='/home/alexis/.vim'
-let g:netrw_dirhist_7='/home/alexis/Imágenes/wallpapers'
-let g:netrw_dirhist_6='/home/alexis/Imágenes'
