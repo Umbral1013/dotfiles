@@ -89,13 +89,13 @@ bindkey -e
     export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
     export NNN_OPENER='/home/alexis/.config/nnn/plugins/nuke'
     export NNN_BMS='d:$HOME/Documentos;D:$HOME/Descargas;i:$HOME/Imágenes'
-    export NNN_TRASH=1
+    export NNN_USE_EDITOR='1'
     alias nnn="nnn -c"
 
 # Aliases
     alias zshconfig="$EDITOR $ZDOTDIR/.zshrc"
     alias notes="$EDITOR $HOME/Documentos/sync/textos1/notas/notas.md"
-    alias rm="rm -I"
+    alias rm="rm -i"
     alias mv="mv -i"
     alias cp="cp -i"
     alias ls="ls --color=auto -hal"
