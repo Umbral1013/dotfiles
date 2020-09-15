@@ -100,17 +100,17 @@ bindkey -e
     alias cp="cp -i"
     alias ls="ls --color=auto -hal"
     alias grep="grep --color=auto"
-    alias ckube="$HOME/Documentos/scripts_y_código/ckube/ckube"
-    alias fetch="$HOME/Documentos/scripts_y_código/fet.sh/fet.sh"
+    alias ckube="$HOME/Documentos/scripts_y_codigo/ckube/ckube"
+    alias fetch="$HOME/Documentos/scripts_y_codigo/fet.sh/fet.sh"
     alias more="less -R"
     alias df="df -h"
     alias ping='ping -c 5'
     alias dmesg='dmesg -HL'
     alias sc='source $ZDOTDIR/.zshrc'
-    alias ~='cd ~'
-    alias ..='cd ..'
     alias df='df -H'
     alias du='du -sh'
+    alias am2r='env "LD_PRELOAD=libcurl.so.3" $HOME/juegos/am2r-mod-v11-to-v15-autopatcher-linux+droid/AM2R_15/AM2R'
+    alias ffcapture='$HOME/Documentos/scripts_y_codigo/ffcapture'
     ## Git aliases
       alias ga='git add'
       alias gs='git status'
