@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/alexis/.config/nnn/plugins'
+let g:netrw_dirhist_2='/home/alexis/dotfiles/picom'
 let g:netrw_dirhist_1='/home/alexis/Documentos/juegos/am2r-mod-v11-to-v15-autopatcher-linux+droid'
 let g:netrw_dirhist_0='/home/alexis/.config/picom'
 let g:netrw_dirhist_9='/home/alexis/dotfiles/redshift/.config/redshift'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_7='/home/alexis/dotfiles/redshift'
 let g:netrw_dirhist_6='/home/alexis/dotfiles'
 let g:netrw_dirhist_5='/home/alexis/.config/ranger'
 let g:netrw_dirhist_4='/home/alexis/.local/share/applications'
-let g:netrw_dirhist_3='/home/alexis/Documentos/scripts_y_código/pruebas-en-c'
-let g:netrw_dirhist_2='/home/alexis/.cache/zsh/history'

@@ -1,5 +1,8 @@
-! Sxiv
-Sxiv.font: monospace 
+! General font settings.
+*font: IBM Plex Mono 
+
+! Cursor theme.
+Xcursor.theme: Adwaita
 
 ! Font rendering
 Xft.dpi: 96
