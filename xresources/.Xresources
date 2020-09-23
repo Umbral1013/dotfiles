@@ -1,5 +1,5 @@
 ! General font settings.
-*font: IBM Plex Mono 
+*font: monospace 
 
 ! Cursor theme.
 Xcursor.theme: Adwaita

@@ -73,8 +73,6 @@ setopt AUTO_CD
       }
 
 # Exports
-export VISUAL='nvim'
-export EDITOR="$VISUAL"
 export TERM="st-256color"    
 ## Moving Android to xdg-base directories.
 export ANDROID_SDK_HOME='$HOME/.config/android'
@@ -107,7 +105,9 @@ alias notes="$EDITOR $HOME/Documentos/sync/textos1/notas/notas.md"
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
-alias ls="ls --color=auto -hal"
+alias ls="ls --color=auto"
+alias ll='ls --color=auto -la'
+alias l.='ls -d .* --color=auto'
 alias grep="grep --color=auto"
 alias ckube="$HOME/Documentos/scripts_y_codigo/ckube/ckube"
 alias fetch="$HOME/Documentos/scripts_y_codigo/fet.sh/fet.sh"
@@ -120,6 +120,8 @@ alias df='df -H'
 alias du='du -sh'
 alias am2r='env "LD_PRELOAD=libcurl.so.3" $HOME/juegos/am2r-mod-v11-to-v15-autopatcher-linux+droid/AM2R_15/AM2R'
 alias ffcapture='$HOME/Documentos/scripts_y_codigo/ffcapture'
+alias vim='/usr/bin/nvim'
+alias nvimcfg='$EDITOR $HOME/.config/nvim/init.vim'
 ## Git aliases
 alias ga='git add'
 alias gs='git status'
