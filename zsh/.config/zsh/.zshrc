@@ -121,6 +121,7 @@ alias du='du -sh'
 alias am2r='env "LD_PRELOAD=libcurl.so.3" $HOME/juegos/am2r-mod-v11-to-v15-autopatcher-linux+droid/AM2R_15/AM2R'
 alias ffcapture='$HOME/Documentos/scripts_y_codigo/ffcapture'
 alias vim='/usr/bin/nvim'
+alias oldvim="\vim"
 alias nvimcfg='$EDITOR $HOME/.config/nvim/init.vim'
 ## Git aliases
 alias ga='git add'
