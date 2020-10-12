@@ -130,15 +130,17 @@ alias gc='git commit -m'
 alias gpush='git push'
 alias gpull='git pull'
 
+# Loading the prompt.
+autoload -Uz promptinit
+promptinit
+## Loading redhat prompt.
+PROMPT='%F{3}[%n@%M %B%~%b]%f '
+
 # Antigen plugins.
 ## Don't show weird messages.
 ANTIGEN_MUTEX=false
 ## Load Antigen.
 source $HOME/.config/zsh/antigen.zsh
-## Syntax highlighting.
-antigen bundle zsh-users/zsh-syntax-highlighting
 ## Suggestions.
 antigen bundle zsh-users/zsh-autosuggestions
-## Prompt theme.
-antigen bundle denysdovhan/spaceship-prompt
 antigen apply
