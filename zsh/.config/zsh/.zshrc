@@ -118,7 +118,7 @@ alias dmesg='dmesg -HL'
 alias sc='source $ZDOTDIR/.zshrc'
 alias df='df -H'
 alias du='du -sh'
-alias am2r='env "LD_PRELOAD=libcurl.so.3" $HOME/juegos/am2r-mod-v11-to-v15-autopatcher-linux+droid/AM2R_15/AM2R'
+alias am2r='env "LD_PRELOAD=libcurl.so.3" $HOME/Documentos/juegos/am2r-mod-v11-to-v15-autopatcher-linux+droid/AM2R_15/AM2R'
 alias ffcapture='$HOME/Documentos/scripts_y_codigo/ffcapture'
 alias vim='/usr/bin/nvim'
 alias oldvim="\vim"
@@ -134,7 +134,7 @@ alias gpull='git pull'
 autoload -Uz promptinit
 promptinit
 ## Loading redhat prompt.
-PROMPT='%F{3}[%n@%M %B%~%b]%f '
+PROMPT='%F{3}[%n@%M %B%~%b]$%f '
 
 # Antigen plugins.
 ## Don't show weird messages.
