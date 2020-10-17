@@ -125,7 +125,6 @@ alias oldvim="\vim"
 alias nvimcfg='$EDITOR $HOME/.config/nvim/init.vim'
 ## Git aliases
 alias ga='git add'
-alias gs='git status'
 alias gc='git commit -m'
 alias gpush='git push'
 alias gpull='git pull'
