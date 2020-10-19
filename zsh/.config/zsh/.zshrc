@@ -80,15 +80,15 @@ export ANDROID_AVD_HOME='$HOME/.local/share/android'
 export ANDROID_EMULATOR_HOME='$HOME/.local/share/android'
 export ABD_VENDOR_KEY='$HOME/.config/android'
 
-# NNN Settings
+# NNN Settings.
 export NNN_FIFO='/tmp/nnn.fifo'
-export NNN_PLUG='n:nuke;w:wall;p:previewtabbed'
+export NNN_PLUG='n:nuke;w:wall;p:preview-tabbed'
 export NNN_COLORS='1234'
 export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 export NNN_OPENER='/home/alexis/.config/nnn/plugins/nuke'
 export NNN_BMS='d:$HOME/Documentos;D:$HOME/Descargas;i:$HOME/Imágenes'
 export NNN_USE_EDITOR='1'
-alias nnn="nnn -c"
+alias nnn="nnn -c -P p"
 
 # Color output according to .xresources.
 if [ "$TERM" = "st-direct" ]; then
@@ -109,8 +109,6 @@ alias ls="ls --color=auto"
 alias ll='ls --color=auto -la'
 alias l.='ls -d .* --color=auto'
 alias grep="grep --color=auto"
-alias ckube="$HOME/Documentos/scripts_y_codigo/ckube/ckube"
-alias fetch="$HOME/Documentos/scripts_y_codigo/fet.sh/fet.sh"
 alias more="less -R"
 alias df="df -h"
 alias ping='ping -c 5'
@@ -118,8 +116,6 @@ alias dmesg='dmesg -HL'
 alias sc='source $ZDOTDIR/.zshrc'
 alias df='df -H'
 alias du='du -sh'
-alias am2r='env "LD_PRELOAD=libcurl.so.3" $HOME/Documentos/juegos/am2r-mod-v11-to-v15-autopatcher-linux+droid/AM2R_15/AM2R'
-alias ffcapture='$HOME/Documentos/scripts_y_codigo/ffcapture'
 alias vim='/usr/bin/nvim'
 alias oldvim="\vim"
 alias nvimcfg='$EDITOR $HOME/.config/nvim/init.vim'
@@ -129,12 +125,6 @@ alias gc='git commit -m'
 alias gpush='git push'
 alias gpull='git pull'
 
-# Loading the prompt.
-autoload -Uz promptinit
-promptinit
-## Loading redhat prompt.
-PROMPT='%F{3}[%n@%M %B%~%b]$%f '
-
 # Antigen plugins.
 ## Don't show weird messages.
 ANTIGEN_MUTEX=false
@@ -142,4 +132,5 @@ ANTIGEN_MUTEX=false
 source $HOME/.config/zsh/antigen.zsh
 ## Suggestions.
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle denysdovhan/spaceship-prompt
 antigen apply
