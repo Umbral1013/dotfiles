@@ -1,3 +1,8 @@
+#           _
+# ___  ___ | |_    _ _   __
+#|_ / (_-< | ' \  | '_| / _|
+#/__| /__/ |_||_| |_|   \__|
+#
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored _correct _approximate
@@ -14,27 +19,34 @@ SAVEHIST=100000000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-# User-set options
-## Autocompletion with arrow keys interface.
+####################
+# USER-SET OPTIONS #
+####################
+#
+#
+# Autocompletion with arrow keys interface.
 zstyle ':completion:*' menu select
-### This line enables alias autocompletion.
+
+# This line enables alias autocompletion.
 setopt COMPLETE_ALIASES
-## History search with arrow keys.
+
+# History search with arrow keys.
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
-## Better history.
-### Add the commands immediatly to the history file.
+# Better history.
+# Add the commands immediatly to the history file.
 setopt INC_APPEND_HISTORY
 export HISTTIMEFORMAT="[%F %T] "
-### Add timestamps to the history file.
+# Add timestamps to the history file.
 setopt EXTENDED_HISTORY
-### Ignore all duplicates.
+# Ignore all duplicates.
 setopt HIST_IGNORE_ALL_DUPS
-## Auto change directory.
+
+# Auto change directory.
 setopt AUTO_CD
 
 # Loading the functions file.
@@ -46,7 +58,7 @@ source $ZDOTDIR/export.zsh
 # Loading the alias file.
 source $ZDOTDIR/alias.zsh
 
-# Loading the walter prompt theme.
+# Loading the walters prompt theme.
 autoload -Uz promptinit
 promptinit
 prompt walters
