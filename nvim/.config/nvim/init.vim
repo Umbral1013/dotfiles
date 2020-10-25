@@ -11,6 +11,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rkulla/pydiction'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -53,6 +54,19 @@ set clipboard+=unnamedplus
 
 " Autocommands.
 autocmd BufReadPost notas.md !cp $HOME/Documentos/sync/textos1/notas/notas.md $HOME/Documentos/sync/textos1/notas/notas.md.bak
+
+"Instant markdown configuration.
+filetype plugin on
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
+"let g:instant_markdown_open_to_the_world = 1
+"let g:instant_markdown_allow_unsafe_content = 1
+"let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+"let g:instant_markdown_python = 1
 
 " Gruvbox options
 let g:gruvbox_bold          = '1'
