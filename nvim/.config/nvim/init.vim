@@ -19,7 +19,9 @@ set noshowmode                                  "Don't show the mode you're curr
 hi CursorLine cterm=NONE ctermbg=257
 
 " Functionality
+filetype plugin on
 set undodir=~/.cache/nvim/undodir   			"Write the undo's in a file inside o a folder.
+set encoding=utf-8                              "Tell nvim to use utf-8 by defualt.
 set undofile			  		            	"The file from above.
 set mouse=a			  			                "Allow mouse input.
 set nobackup			  						"Turn backups off.
@@ -33,7 +35,12 @@ set wildmenu
 set wildmode=list:longest,full
 set nowritebackup                               "Some servers have issues with backup files using Conquerer of Completion.
 set shortmess+=c                                "Don't pass messages to ins-completion-menu
-let g:pydiction_location = '/home/alexis/.local/share/nvim/site/pack/a/start/pydiction/complete-dict'
+set ai
+let g:tex_flavor = 'latex'
+let g:pydiction_location = '/home/watson/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
+let g:pyindent_open_paren = 'shiftwidth() * 4'
+let g:pyindent_nested_paren = 'shiftwidth()'
+let g:pyindent_continue = 'shiftwidth() * 4'
 " Nvim-only options.
 set clipboard+=unnamedplus
 
@@ -45,9 +52,7 @@ let g:gruvbox_termcolors    = '256'
 let g:gruvbox_contrast_dark = 'medium'
 	
 " Choose your theme 
-colorscheme gruvbox
-let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
+colorscheme zenburn
 set background=dark
 
 " Enable true color 启用终端24位色
