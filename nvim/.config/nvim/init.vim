@@ -15,7 +15,6 @@ set cursorline                                  "Always show current position.
 set cmdheight=1		                            "Height of the command bar.
 set hlsearch		 	                        "Highlight search results.
 set nowrap		 	 	                        "If a line goes off screen, it won't appear on the other side.
-set noshowmode                                  "Don't show the mode you're currently in. This is useful for lightline.
 hi CursorLine cterm=NONE ctermbg=257
 
 " Functionality
@@ -35,7 +34,8 @@ set wildmenu
 set wildmode=list:longest,full
 set nowritebackup                               "Some servers have issues with backup files using Conquerer of Completion.
 set shortmess+=c                                "Don't pass messages to ins-completion-menu
-set ai
+set ai                                          "Auto indentation.
+set path+=**                                    "Search down into subfolders. Provides tab-completion for all file-related tasks.
 let g:tex_flavor = 'latex'
 let g:pydiction_location = '/home/watson/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
 let g:pyindent_open_paren = 'shiftwidth() * 4'
