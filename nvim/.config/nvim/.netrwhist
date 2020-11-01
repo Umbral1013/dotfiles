@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/watson/.config/nvim'
+let g:netrw_dirhist_3='/home/watson/.config'
+let g:netrw_dirhist_2='/home/watson'
 let g:netrw_dirhist_1='/home/watson/.config/nvim'
 let g:netrw_dirhist_0='/home/watson/.config'
 let g:netrw_dirhist_9='/home/watson'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_8='/home/watson/.config/nvim'
 let g:netrw_dirhist_7='/home/watson/.config'
 let g:netrw_dirhist_6='/home/watson'
 let g:netrw_dirhist_5='/home/watson/Documentos'
-let g:netrw_dirhist_4='/home/watson/Documentos/pruebas latex'
-let g:netrw_dirhist_3='/home/watson/Documentos/escuela/programación'
-let g:netrw_dirhist_2='/home/watson/Descargas'
