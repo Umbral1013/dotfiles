@@ -15,12 +15,14 @@ set cursorline                                  "Always show current position.
 set cmdheight=1		                            "Height of the command bar.
 set hlsearch		 	                        "Highlight search results.
 set nowrap		 	 	                        "If a line goes off screen, it won't appear on the other side.
+set sc
 hi CursorLine cterm=NONE ctermbg=257
 
 " Functionality
 filetype plugin on
+filetype on
 set undodir=~/.cache/nvim/undodir   			"Write the undo's in a file inside o a folder.
-set encoding=utf-8                              "Tell nvim to use utf-8 by defualt.
+set enc=utf-8                                   "Tell nvim to use utf-8 by defualt.
 set undofile			  		            	"The file from above.
 set mouse=a			  			                "Allow mouse input.
 set nobackup			  						"Turn backups off.
@@ -41,6 +43,12 @@ let g:pydiction_location = '/home/watson/.local/share/nvim/site/pack/foo/start/p
 let g:pyindent_open_paren = 'shiftwidth() * 4'
 let g:pyindent_nested_paren = 'shiftwidth()'
 let g:pyindent_continue = 'shiftwidth() * 4'
+let g:netrw_banner=0                            "Disable the banner from the file browser
+let g:netrw_browse_split=4                      "Open in prior window
+let g:netwr_liststyle=3                         "Tree view"
+let g:netrw_altv=1                              "Open splits to the right"
+" Insert a template latex document.
+au BufNewFile *.tex :-1read /home/watson/dotfiles/.esqueleto.tex
 " Nvim-only options.
 set clipboard+=unnamedplus
 
