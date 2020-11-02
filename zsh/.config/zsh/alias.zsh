@@ -1,6 +1,5 @@
 # Aliases
-alias zshconfig="$EDITOR $ZDOTDIR/.zshrc"
-alias notes="$EDITOR $HOME/Documentos/sync/textos1/notas/notas.md"
+alias zshconfig="$EDITOR ~/.zshrc"
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
@@ -12,11 +11,9 @@ alias more="less -R"
 alias df="df -h"
 alias ping='ping -c 5'
 alias dmesg='dmesg -HL'
-alias sc='source $ZDOTDIR/.zshrc'
+alias sc='source ~/.zshrc'
 alias df='df -H'
 alias du='du -sh'
-alias vim='/usr/bin/nvim'
-alias oldvim="\vim"
 alias nvimcfg='$EDITOR $HOME/.config/nvim/init.vim'
 ## Git aliases
 alias ga='git add'

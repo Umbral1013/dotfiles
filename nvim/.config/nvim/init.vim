@@ -4,7 +4,7 @@
 "|_| |_||_| |_|  \__| (_)  \_/  |_| |_|_|_|
 "
 " Appearance and feeling.
-set number                                      "Display the relative line numbers below, but the current line has the absolute line number.
+set nu rnu                                      "Display the relative line numbers below, but the current line has the absolute line number.
 syntax on
 set noerrorbells	                        	"No sound or visual effect if error.
 set cursorline                                  "Always show current position.
@@ -18,6 +18,8 @@ hi CursorLine cterm=NONE ctermbg=257
 " Functionality
 filetype plugin on
 filetype on
+set complete+=k
+set dictionary+=$HOME/dotfiles/Spanish.dic      "Set the route for the spanish dictionary"
 set undodir=~/.cache/nvim/undodir   			"Write the undo's in a file inside o a folder.
 set enc=utf-8                                   "Tell nvim to use utf-8 by defualt.
 set undofile			  		            	"The file from above.
