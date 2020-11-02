@@ -3,10 +3,6 @@
 "| | | ' \  | | |  _|  _  \ V / | | | '  \
 "|_| |_||_| |_|  \__| (_)  \_/  |_| |_|_|_|
 "
-" #############
-" #  OPTIONS  #
-" #############
-"
 " Appearance and feeling.
 set number                                      "Display the relative line numbers below, but the current line has the absolute line number.
 syntax on
@@ -39,7 +35,7 @@ set shortmess+=c                                "Don't pass messages to ins-comp
 set ai                                          "Auto indentation.
 set path+=**                                    "Search down into subfolders. Provides tab-completion for all file-related tasks.
 let g:tex_flavor = 'latex'
-let g:pydiction_location = '/home/watson/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
+let g:pydiction_location = '$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
 let g:pyindent_open_paren = 'shiftwidth() * 4'
 let g:pyindent_nested_paren = 'shiftwidth()'
 let g:pyindent_continue = 'shiftwidth() * 4'
@@ -47,8 +43,8 @@ let g:netrw_banner=0                            "Disable the banner from the fil
 let g:netrw_browse_split=4                      "Open in prior window
 let g:netwr_liststyle=3                         "Tree view"
 let g:netrw_altv=1                              "Open splits to the right"
-" Insert a template latex document.
-au BufNewFile *.tex :-1read /home/watson/dotfiles/.esqueleto.tex
+" Useful things when doing LaTeX documents.
+au BufNewFile *.tex :-1read $HOME/dotfiles/.esqueleto.tex
 " Nvim-only options.
 set clipboard+=unnamedplus
 
