@@ -12,6 +12,7 @@ set cmdheight=1		                            "Height of the command bar.
 set hlsearch		 	                        "Highlight search results.
 set nowrap		 	 	                        "If a line goes off screen, it won't appear on the other side.
 set sc
+set termguicolors                               "Set true color support."
 hi CursorLine cterm=NONE ctermbg=257
 
 " Functionality
@@ -33,6 +34,7 @@ set wildmode=list:longest,full
 set nowritebackup                               "Some servers have issues with backup files using Conquerer of Completion.
 set shortmess+=c                                "Don't pass messages to ins-completion-menu
 set ai                                          "Auto indentation.
+set si                                          "Smart indentation.
 set path+=**                                    "Search down into subfolders. Provides tab-completion for all file-related tasks.
 let g:tex_flavor = 'latex'
 let g:pydiction_location = '$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
@@ -58,10 +60,3 @@ let g:gruvbox_contrast_dark = 'medium'
 " Choose your theme 
 colorscheme zenburn
 set background=dark
-
-" Enable true color 启用终端24位色
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
