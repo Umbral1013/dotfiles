@@ -1,15 +1,23 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[letterpaper,12pt]{article}
 \usepackage[scaled]{helvet}
 \usepackage[margin=1in]{geometry}
-\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}     % Sets the input in utf-8 for a larger compatibility with other languages
+\usepackage[spanish]{babel}     % This one sets the things like Bibliography or Date to spanish, really useful
+\usepackage{graphicx}   % This one allows for image input on the document
+\usepackage{natbib}     % A better way to display bibliography, it makes it look natural.
 \renewcommand\familydefault{\sfdefault}
 \linespread{1.5}
 
-\begin{document}
-
+%--------------------------------
 \title{}
 \author{}
 \date{\today}
+%--------------------------------
+
+\begin{document}
 \maketitle
 
+\newpage
+\bibliographystyle{apalike}
+\bibliography{referencias}
 \end{document}

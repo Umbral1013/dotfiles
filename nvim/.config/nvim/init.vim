@@ -3,6 +3,8 @@
 "| | | ' \  | | |  _|  _  \ V / | | | '  \
 "|_| |_||_| |_|  \__| (_)  \_/  |_| |_|_|_|
 "
+"-------------------------------------------
+"
 " Appearance and feeling.
 set nu rnu                                      "Display the relative line numbers below, but the current line has the absolute line number.
 syntax on
@@ -14,7 +16,9 @@ set nowrap		 	 	                        "If a line goes off screen, it won't app
 set sc
 set termguicolors                               "Set true color support."
 hi CursorLine cterm=NONE ctermbg=257
-
+"
+"-------------------------------------------
+"
 " Functionality
 filetype plugin on
 filetype on
@@ -47,17 +51,26 @@ let g:netrw_banner=0                            "Disable the banner from the fil
 let g:netrw_browse_split=4                      "Open in prior window
 let g:netwr_liststyle=3                         "Tree view"
 let g:netrw_altv=1                              "Open splits to the right"
+"
+"-------------------------------------------
+"
 " Useful things when doing LaTeX documents.
 au BufNewFile *.tex :-1read $HOME/dotfiles/.esqueleto.tex
+" Useful things when doing python documents.
+au BufNewFile *.py :-1read $HOME/dotfiles/.esqueleto.py
 " Nvim-only options.
 set clipboard+=unnamedplus
-
+"
+"-------------------------------------------
+"
 " Gruvbox options
 let g:gruvbox_bold          = '1'
 let g:gruvbox_italic        = '1'
 let g:gruvbox_underline     = '1'
 let g:gruvbox_termcolors    = '256'
 let g:gruvbox_contrast_dark = 'medium'
+
+"-------------------------------------------
 	
 " Choose your theme 
 colorscheme zenburn
