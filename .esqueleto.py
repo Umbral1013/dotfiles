@@ -1,4 +1,4 @@
-# Bloque del programador
+# BLOQUE DEL PROGRAMADOR
 #
 # NP = Aquí viene el nombre del programador
 # NP = Aquí viene el nombre del programa

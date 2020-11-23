@@ -42,6 +42,7 @@ set shortmess+=c                                "Don't pass messages to ins-comp
 set ai                                          "Auto indentation.
 set si                                          "Smart indentation.
 set path+=**                                    "Search down into subfolders. Provides tab-completion for all file-related tasks.
+set foldmethod=indent                           "Automatically fold indented lines of code
 let g:tex_flavor = 'latex'
 let g:pydiction_location = '$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
 let g:pyindent_open_paren = 'shiftwidth() * 4'
