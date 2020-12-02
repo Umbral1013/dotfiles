@@ -2,7 +2,7 @@
 " (_)  _ _   (_) | |_      __ __ (_)  _ __
 " | | | ' \  | | |  _|  _  \ V / | | | '  \
 " |_| |_||_| |_|  \__| (_)  \_/  |_| |_|_|_|
-" 
+ 
 "-------------------------------------------
 " APPEARANCE AND FEELING.
  
@@ -48,10 +48,13 @@ let g:netrw_winsize         = 25
 " UTILITIES
  
 " Writing LaTeX documents
+let g:tex_nospell = 1
 au BufNewFile *.tex :-1read $HOME/dotfiles/.esqueleto.tex
 au BufRead,BufNewFile *.tex setlocal spell
 au BufNewFile,BufRead *.tex set textwidth=70
 let g:tex_flavor = 'latex'
+let g:tex_fold_enabled = 1
+set fdm=syntax
 
 " Writing Python code
 au BufNewFile *.py :-1read $HOME/dotfiles/.esqueleto.py
