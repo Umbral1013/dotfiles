@@ -5,7 +5,7 @@
 " 
 "-------------------------------------------
 " APPEARANCE AND FEELING.
-" 
+ 
 colorscheme zenburn
 set nu rnu                                      " Display the relative line numbers below, but the current line has the absolute line number.
 set cursorline                                  " Always show current position.
@@ -17,7 +17,7 @@ hi CursorLine cterm=NONE ctermbg=257
 " 
 "-------------------------------------------
 " FUNCTIONALITY
-" 
+ 
 set complete+=k
 set dictionary+=$HOME/dotfiles/Spanish.dic      " Set the route for the spanish dictionary"
 set ignorecase			 						" Ignore case when searching.
@@ -33,28 +33,27 @@ set undofile			  		            	" The file from above.
 set nobackup			  						" Turn backups off.
 set noswapfile			 						" Turn swapfiles off.                                  
 set foldmethod=indent                           " Automatically fold indented lines of code
-let g:tex_flavor            = 'latex'
-let g:pydiction_location    = '$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
-let g:pyindent_open_paren   = 'shiftwidth() * 4'
-let g:pyindent_nested_paren = 'shiftwidth()'
-let g:pyindent_continue     = 'shiftwidth() * 4'
-" 
+set clipboard+=unnamedplus
+ 
 "-------------------------------------------
 " NETRW SETTINGS (NERDTREE-LIKE)
-" 
+ 
 let g:netrw_banner          = 0
 let g:netrw_liststyle       = 3
 let g:netrw_browse_split    = 4
 let g:netrw_altv            = 1
 let g:netrw_winsize         = 25
-" 
+ 
 "-------------------------------------------
-" USEFUL THINGS WHEN DOING LATEX DOCUMENTS.
-" 
+" UTILITIES
+ 
+" Writing LaTeX documents
 au BufNewFile *.tex :-1read $HOME/dotfiles/.esqueleto.tex
-au BufRead *.tex setlocal spell
-au BufNewFile,BufRead *.tex set textwidth=79
-"  Useful things when doing python documents.
+au BufRead,BufNewFile *.tex setlocal spell
+au BufNewFile,BufRead *.tex set textwidth=70
+let g:tex_flavor = 'latex'
+
+" Writing Python code
 au BufNewFile *.py :-1read $HOME/dotfiles/.esqueleto.py
 au BufNewFile,BufRead *.py
     \set tabstop=4
@@ -64,17 +63,19 @@ au BufNewFile,BufRead *.py
     \set expandtab
     \set autoindent
     \set fileformat=unix
-"  Nvim-only options.
-set clipboard+=unnamedplus
-" 
+let g:pydiction_location    = '$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
+let g:pyindent_open_paren   = 'shiftwidth() * 4'
+let g:pyindent_nested_paren = 'shiftwidth()'
+let g:pyindent_continue     = 'shiftwidth() * 4'
+
+" Writing makefiles
+au BufNewFile,BufRead Makefile,makefile set noexpandtab
+
 "-------------------------------------------
 " NAVIGATION
+
 " splits
-"
-" nnoremap <C-J> <C-W><C-J>
-" nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-L> <C-W><C-L>
-" nnoremap <C-H> <C-W><C-H>
+
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
 tnoremap <A-k> <C-\><C-N><C-w>k
@@ -88,6 +89,6 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-"
 " folding
+
 nnoremap <space> za
