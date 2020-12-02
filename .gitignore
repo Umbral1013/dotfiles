@@ -1,2 +1,6 @@
-zsh/.zsh_history
-vim/*
+zsh/.zsh_history    # Ignore zsh history file
+vim/*               # Ignore everything under vim
+
+# Ignore local backup files
+*.bak   
+*.save

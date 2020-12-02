@@ -1,5 +1,5 @@
-# Functions
-## Extraction function. Usage: 'ex <file-name>'
+# FUNCTIONS
+# Extraction function. Usage: 'ex <file-name>'
 	ex ()
 	{
 	  if [ -f $1 ] ; then
@@ -22,7 +22,7 @@
 	  fi
 	}
 
-## Man in colors.
+# Man in colors
       man() {
           LESS_TERMCAP_md=$'\e[01;31m' \
           LESS_TERMCAP_me=$'\e[0m' \
@@ -32,3 +32,20 @@
           LESS_TERMCAP_us=$'\e[01;32m' \
           command man "$@"
       }
+
+# Less in colors
+zmodload zsh/zpty
+
+pty() {
+	zpty pty-${UID} ${1+$@}
+	if [[ ! -t 1 ]];then
+		setopt local_traps
+		trap '' INT
+	fi
+	zpty -r pty-${UID}
+	zpty -d pty-${UID}
+}
+
+ptyless() {
+	pty $@ | less
+}
