@@ -16,3 +16,5 @@ these files on your machine.
 I took some code from other people, but it's just
 so much that i don't remember. However, i would like
 to thank these people for their work.
+
+![Random image of my desktop](Screenshot_20201207_013819.png)
