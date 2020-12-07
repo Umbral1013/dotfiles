@@ -50,22 +50,23 @@ let g:netrw_winsize         = 25
 " Writing LaTeX documents
 let g:tex_nospell = 1
 au BufNewFile *.tex :-1read $HOME/dotfiles/.esqueleto.tex
-au BufRead,BufNewFile *.tex setlocal spell
-au BufNewFile,BufRead *.tex set textwidth=70
-let g:tex_flavor = 'latex'
-let g:tex_fold_enabled = 1
-set fdm=syntax
+au BufRead,BufNewFile *.tex 
+    \set spell                  |
+    \set textwidth=70           |
+    \let g:tex_flavor = 'latex' |
+    \let g:tex_fold_enabled = 1 |
+    \set fdm=syntax             |
 
 " Writing Python code
 au BufNewFile *.py :-1read $HOME/dotfiles/.esqueleto.py
-au BufNewFile,BufRead *.py
-    \set tabstop=4
-    \set softtabstop=4
-    \set shiftwidth=4
-    \set textwidth=79
-    \set expandtab
-    \set autoindent
-    \set fileformat=unix
+au BufRead,BufNewFile *.py
+    \set tabstop=4          |
+    \set softtabstop=4      |
+    \set shiftwidth=4       |
+    \set textwidth=79       |
+    \set expandtab          |
+    \set autoindent         |
+    \set fileformat=unix    |
 let g:pydiction_location    = '$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
 let g:pyindent_open_paren   = 'shiftwidth() * 4'
 let g:pyindent_nested_paren = 'shiftwidth()'

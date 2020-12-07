@@ -15,6 +15,7 @@ alias sc='source ~/.zshrc'
 alias df='df -H'
 alias du='du -sh'
 alias nvimcfg='$EDITOR $HOME/.config/nvim/init.vim'
+alias makelatex="make -f $HOME/dotfiles/Makefile_for_LaTeX"
 ## Git aliases
 alias ga='git add'
 alias gc='git commit -m'
