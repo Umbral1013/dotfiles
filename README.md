@@ -2,8 +2,8 @@
 
 Here are my dotfiles.
 
-I recommend using `stow` to put the files in place.
-It's done like this:
+I recommend to use `stow` to put the files in the correct
+place. It's done like this:
 
 `stow <The directory>`
 
