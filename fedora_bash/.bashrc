@@ -35,5 +35,6 @@ bind 'TAB:menu-complete'
 # Custom prompt
 green="\[$(tput setaf 2)\]"
 pink="\[$(tput setaf 9)\]"
+bold="\[$(tput bold)\]"
 reset="\[$(tput sgr0)\]"
-PS1="${pink}\u${reset} ▶ \W ${green}→${reset} "
+PS1="${pink}${bold}\u${reset} ▶ \W ${green}→${reset} "
