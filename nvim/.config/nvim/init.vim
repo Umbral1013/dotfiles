@@ -33,6 +33,8 @@ set undofile			  		            	" The file from above.
 set nobackup			  						" Turn backups off.
 set noswapfile			 						" Turn swapfiles off.                                  
 set foldmethod=indent                           " Automatically fold indented lines of code
+set textwidth=80                                " Don't let me write more than 80 characters per line
+set backspace=indent,eol,start                  " Backspace more powerful
 set clipboard+=unnamedplus
  
 "-------------------------------------------
@@ -53,20 +55,12 @@ au BufNewFile *.tex :-1read $HOME/dotfiles/.esqueleto.tex
 au BufRead,BufNewFile *.tex 
     \set spell                  |
     \set textwidth=70           |
-    \let g:tex_flavor = 'latex' |
-    \let g:tex_fold_enabled = 1 |
-    \set fdm=syntax             |
+    \set fdm=syntax             
+    \let g:tex_flavor = 'latex' 
+    \let g:tex_fold_enabled = 1 
 
 " Writing Python code
 au BufNewFile *.py :-1read $HOME/dotfiles/.esqueleto.py
-au BufRead,BufNewFile *.py
-    \set tabstop=4          |
-    \set softtabstop=4      |
-    \set shiftwidth=4       |
-    \set textwidth=79       |
-    \set expandtab          |
-    \set autoindent         |
-    \set fileformat=unix    |
 let g:pydiction_location    = '$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
 let g:pyindent_open_paren   = 'shiftwidth() * 4'
 let g:pyindent_nested_paren = 'shiftwidth()'
