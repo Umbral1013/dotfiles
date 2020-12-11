@@ -1,13 +1,12 @@
-'''
-BLOQUE DEL PROGRAMADOR
-
- NP = Aquí viene el nombre del programador
- NP = Aquí viene el nombre del programa
- Fecha = 
- DP = Descripción del programa
-
--------------------------------------
-
- Donde:
-
--------------------------------------'''
+# BLOQUE DEL PROGRAMADOR -------------{{{
+#
+#  NOMBRE DEL PROGRAMADOR : 
+#  NOMBRE DEL PROGRAMA : 
+#  FECHA : 
+#  DESCRIPCIÓN DEL PROGRAMA : 
+#
+# -------------------------------------
+#
+#  DONDE:
+#
+# -------------------------------------}}}

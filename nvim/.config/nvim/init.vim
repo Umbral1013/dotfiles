@@ -6,35 +6,36 @@ set softtabstop=4
 set tabstop=4 
 set shiftwidth=4
 set expandtab
+
 " Dictionary
-set complete+=k                 " This is used for autocompletion
-"
-" A custom dictionary with spanish words
+set complete+=k                 
 set dictionary+=$HOME/dotfiles/Spanish.dic      
-"
-set spelllang=es_mx,en_us       " Spell languages are spanish and english
+set spelllang=es_mx,en_us      
+
 " Undo's and backups
 set nowritebackup                               
 set undofile			  		            	
 set nobackup			  						
 set noswapfile			 						
+
 " Miscellaneous
-set clipboard+=unnamedplus      " Tell Nvim to use the system's clipboard
-set smartindent                 " Indent according to the surroundings
-set smartcase			 	    " When searching use case-sensitivity wisely
-set updatetime=100              " Make waiting times on Nvim faster
-set wildmode=list:longest,full  " Make Wildmenu more functional
-set shortmess+=c                " Keep editor's messages brief
-set path+=**                    " This allows fuzzy searching with the *
+set foldmethod=marker
+set clipboard+=unnamedplus      
+set smartindent                 
+set smartcase			 	    
+set updatetime=100              
+set wildmode=list:longest,full  
+set shortmess+=c                
+set path+=**                    
 " }}}
 
 
 " Appearance settings -------- {{{
-colorscheme zenburn                     " Set the colorscheme to Zenburn
-set number relativenumber               " Other lines : Relative; Current : Real number
+colorscheme zenburn                     
+set number relativenumber               
 set cursorline                          
-set nowrap		 	 	                " Don't wrap my lines
-set termguicolors                       " Nice colors on supported terminals
+set nowrap		 	 	                
+set termguicolors                       
 " }}}
 
 
@@ -56,14 +57,7 @@ augroup pythonHelp
     autocmd!
     autocmd BufNewFile *.py :-1read $HOME/dotfiles/.esqueleto.py
     autocmd BufNewFile,BufRead *.py
-        \ set textwidth=79
-        \ set fileformat=unix
-augroup end
-
-" This group is to make folds according to the markers i've made on this file.
-augroup nvimCfg
-    autocmd!
-    autocmd BufRead init.vim :setlocal foldmethod=marker
+        \ source $HOME/dotfiles/google_python_style.vim
 augroup end
 
 " Lastly, this one is to ensure that on makefiles, when TAB is pressed the
@@ -80,7 +74,7 @@ augroup end
 "
 " This is for the pydiction plugin. Here i describe the path that should be
 " used for a particular file needed for that plugin.
-let g:pydiction_location = '$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
+let g:pydiction_location = '$HOME/local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
 "
 " Indent after an open parenthesis
 let g:pyindent_open_paren = '&sw * 2'
@@ -90,14 +84,14 @@ let g:pyindent_nested_paren = '&sw'
 let g:pyindent_continue = '&sw * 2'
 
 " Netrw 
-let g:netrw_banner = 0          " Removes the banner from netrw
-let g:netrw_liststyle = 0       " Uses the thin listing
-let g:netrw_browse_split = 3    " Open the file selected on a new tab
-let g:netrw_winsize = 25        " Changes the netrw window size to 25 pixels
+let g:netrw_banner = 0          
+let g:netrw_liststyle = 0       
+let g:netrw_browse_split = 3    
+let g:netrw_winsize = 25        
  
 " LaTeX 
-let g:tex_nospell = 1           " Don't use spell on LaTeX commands
-let g:tex_flavor = 'latex'      " Use LaTeX as the preferred tex_flavor
+let g:tex_nospell = 1           
+let g:tex_flavor = 'latex'      
 " }}}
  
 

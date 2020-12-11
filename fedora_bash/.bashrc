@@ -1,5 +1,7 @@
 # .bashrc
 
+# DEFINED BY DEFUALT -------- {{{
+#
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -21,13 +23,20 @@ if [ -e $HOME/.bash_aliases ]; then
     source $HOME/.bash_aliases
 fi
 
+# }}}
+
+
+# USER DEFINED -------- {{{
+
+# Declaring environmental variables.
+EDITOR="/usr/bin/nvim"
+PYDICTION="$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict"
+PYTHON_VIMRC="$HOME/dotfiles/google_python_style.vim"
+
 # Source functions file
 if [ -e $HOME/.bash_functions ]; then
     source $HOME/.bash_functions
 fi
-
-# Define default editor
-EDITOR="/usr/bin/nvim"
 
 # Better tab-autocomplete
 set show-all-if-ambiguous on
@@ -35,3 +44,5 @@ bind 'TAB:menu-complete'
 
 # Custom prompt
 PS1="\u @ \[\e[4m\]\W\[\e[0m\] → "
+
+# }}}
