@@ -28,21 +28,16 @@ fi
 
 # USER DEFINED -------- {{{
 
-# Declaring environmental variables.
-EDITOR="/usr/bin/nvim"
-PYDICTION="$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict"
-PYTHON_VIMRC="$HOME/dotfiles/google_python_style.vim"
-
-# Source functions file
-if [ -e $HOME/.bash_functions ]; then
-    source $HOME/.bash_functions
-fi
-
 # Better tab-autocomplete
 set show-all-if-ambiguous on
 bind 'TAB:menu-complete'
 
 # Custom prompt
 PS1="\u @ \[\e[4m\]\W\[\e[0m\] → "
+
+# Source bash functions
+if [ -e $HOME/.bash_functions ]; then     
+    source $HOME/.bash_functions
+fi
 
 # }}}

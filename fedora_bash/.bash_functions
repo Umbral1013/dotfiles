@@ -1,4 +1,10 @@
-# cd into a directory and then list the files inside
+# .bash_functions
+
+
+# cl - cd and ls at the same time -------- {{{
+#
+# Description:
+#   cd into a directory and then list the files inside
 function cl() {
     DIR="$*";
         # if no DIR given, go home
@@ -9,9 +15,12 @@ function cl() {
     # use your preferred ls command
         ls -F --color=auto
 }
+# }}}
 
-# ex - archive extractor
-# usage: ex <file>
+
+# ex - Archive Extractor {{{
+#
+# Usage: ex <file>
 ex ()
 {
   if [ -f $1 ] ; then
@@ -33,3 +42,4 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+# }}}

@@ -1,4 +1,5 @@
-" INIT.VIM
+" init.vim
+
 
 " Functionality settings -------- {{{
 " TAB
@@ -46,18 +47,21 @@ augroup latexHelp
     autocmd!
     autocmd BufNewFile *.tex :-1read $HOME/dotfiles/.esqueleto.tex
     autocmd BufRead,BufNewFile *.tex
-        \ set spell                  
-        \ set textwidth=70           
+                \set spell                  
+                \set textwidth=70           
 augroup end
 
 " This one copies a template over any Python file that's created, sets the
 " textwidth to 79 (the recommended by pep8) and changes the fileformat to
-" unix.
+" unix. It also uses a Google vimrc file made to make editing python files a
+" bit easier.
 augroup pythonHelp
     autocmd!
     autocmd BufNewFile *.py :-1read $HOME/dotfiles/.esqueleto.py
     autocmd BufNewFile,BufRead *.py
-        \ source $HOME/dotfiles/google_python_style.vim
+                \set textwidth=79 |
+                \set filetype=unix |
+                \source $HOME/dotfiles/google_python_style.vim
 augroup end
 
 " Lastly, this one is to ensure that on makefiles, when TAB is pressed the
