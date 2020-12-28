@@ -38,4 +38,5 @@ alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
 alias nvimcfg="$EDITOR $HOME/.config/nvim/init.vim"
+alias tr="gawk -f <(curl -Ls git.io/translate) -- -shell"
 # }}}
