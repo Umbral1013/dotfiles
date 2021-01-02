@@ -21,7 +21,7 @@ set noswapfile
 
 " Miscellaneous
 set foldmethod=marker
-set clipboard+=unnamedplus      
+set clipboard+=unnamedplus
 set smartindent                 
 set smartcase			 	    
 set updatetime=100              
@@ -32,7 +32,7 @@ set path+=**
 
 
 " Appearance settings -------- {{{
-colorscheme zenburn                     
+colorscheme seoul256                     
 set number relativenumber               
 set cursorline                          
 set nowrap		 	 	                
@@ -78,7 +78,7 @@ augroup end
 "
 " This is for the pydiction plugin. Here i describe the path that should be
 " used for a particular file needed for that plugin.
-let g:pydiction_location = '$HOME/local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
+let g:pydiction_location = '$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
 "
 " Indent after an open parenthesis
 let g:pyindent_open_paren = '&sw * 2'

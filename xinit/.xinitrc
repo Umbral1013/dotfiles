@@ -9,7 +9,7 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
-SESSION=${1:-xfce}
+SESSION=${1:-kde}
 
 # merge in defaults and keymaps
 
@@ -51,7 +51,7 @@ get_session(){
 		gnome) dbus_args+=(gnome-session) ;;
 		i3|i3wm) dbus_args+=(i3 --shmlog-size 0) ;;
 		jwm) dbus_args+=(jwm) ;;
-		kde) dbus_args+=(startkde) ;;
+		kde) dbus_args+=(startplasma-x11) ;;
 		lxde) dbus_args+=(startlxde) ;;
 		lxqt) dbus_args+=(lxqt-session) ;;
 		mate) dbus_args+=(mate-session) ;;

@@ -14,3 +14,6 @@ fi
 EDITOR="/usr/bin/nvim"
 PYDICTION="$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict"
 PYTHON_VIMRC="$HOME/dotfiles/google_python_style.vim"
+
+# Autostart x at login
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
