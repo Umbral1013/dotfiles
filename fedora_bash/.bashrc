@@ -32,13 +32,6 @@ fi
 set show-all-if-ambiguous on
 bind 'TAB:menu-complete'
 
-# Custom prompt
-UNDERLINE="\[\e[4m\]"
-BOLD="\[\e[1m\]"
-NO_FX="\[\e[0m\]"
-
-PS1="\u@$BOLD\h$NO_FX $UNDERLINE\W$NO_FX → "
-
 # Source bash functions
 if [ -e $HOME/.bash_functions ]; then     
     source $HOME/.bash_functions
