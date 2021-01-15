@@ -11,9 +11,7 @@ if [ -e $HOME/.bash_functions ]; then
 fi
 
 # User specific environment and startup programs
-EDITOR="/usr/bin/nvim"
-PYDICTION="$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict"
-PYTHON_VIMRC="$HOME/dotfiles/google_python_style.vim"
+export TERM="xterm-246color"
 
 # Autostart x at login
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi

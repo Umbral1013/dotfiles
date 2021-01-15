@@ -32,7 +32,7 @@ set path+=**
 
 
 " Appearance settings -------- {{{
-colorscheme seoul256                     
+colorscheme zenburn                     
 set number relativenumber               
 set cursorline                          
 set nowrap		 	 	                

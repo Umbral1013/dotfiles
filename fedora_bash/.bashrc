@@ -17,7 +17,7 @@ export PATH
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-# User specific aliases and functions
+# User specific aliases and profile
 # Source aliases file
 if [ -e $HOME/.bash_aliases ]; then     
     source $HOME/.bash_aliases

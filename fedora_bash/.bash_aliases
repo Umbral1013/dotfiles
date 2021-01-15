@@ -34,6 +34,7 @@ alias va='source ./venv/bin/activate'
 
 
 # MY OWN ALIASES -------- {{{
+export EDITOR=/usr/bin/nvim
 alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
