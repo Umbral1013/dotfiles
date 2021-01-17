@@ -1,7 +1,7 @@
 " init.vim
 
 
-" Functionality settings -------- {{{
+" Functionality settings {{{
 " TAB
 set softtabstop=4               
 set tabstop=4 
@@ -28,10 +28,11 @@ set updatetime=100
 set wildmode=list:longest,full  
 set shortmess+=c                
 set path+=**                    
+filetype plugin on
 " }}}
 
 
-" Appearance settings -------- {{{
+" Appearance settings {{{
 colorscheme zenburn                     
 set number relativenumber               
 set cursorline                          
@@ -40,32 +41,27 @@ set termguicolors
 " }}}
 
 
-" Autogroups -------- {{{
-" This autogroup copies a template over any LaTeX file, sets spell for the
-" document and reduces the textwidth to 70.
+" Autogroups {{{
 augroup latexHelp       
     autocmd!
+    " Copy template to newly created file.
     autocmd BufNewFile *.tex :-1read $HOME/dotfiles/.esqueleto.tex
     autocmd BufRead,BufNewFile *.tex
-                \set spell                  
-                \set textwidth=70           
+                \ set spell                  
+                \ set textwidth=70           
 augroup end
 
-" This one copies a template over any Python file that's created, sets the
-" textwidth to 79 (the recommended by pep8) and changes the fileformat to
-" unix. It also uses a Google vimrc file made to make editing python files a
-" bit easier.
 augroup pythonHelp
     autocmd!
+    " Copy template to newly created file.
     autocmd BufNewFile *.py :-1read $HOME/dotfiles/.esqueleto.py
     autocmd BufNewFile,BufRead *.py
-                \set textwidth=79 |
-                \set filetype=unix |
-                \source $HOME/dotfiles/google_python_style.vim
+                \ set textwidth=79 |
+                \ set filetype=unix |
+                \ source $HOME/dotfiles/google_python_style.vim
 augroup end
 
-" Lastly, this one is to ensure that on makefiles, when TAB is pressed the
-" output is indeed a real TAB.
+" Use real TAB on Makefiles.
 augroup makefileHelp
     autocmd!
     autocmd BufNewFile,BufRead Makefile,makefile set noexpandtab
@@ -73,13 +69,20 @@ augroup end
 " }}}
 
 
-" Let -------- {{{
-" Python 
-"
-" This is for the pydiction plugin. Here i describe the path that should be
-" used for a particular file needed for that plugin.
-let g:pydiction_location = '$HOME/.local/share/nvim/site/pack/foo/start/pydiction/complete-dict'
-"
+" Let {{{
+" Used for pydiction
+let g:pydiction_location = 
+            \'$HOME/
+            \.local/
+            \share/
+            \nvim/
+            \site/
+            \pack/
+            \foo/
+            \start/
+            \pydiction/
+            \complete-dict'
+
 " Indent after an open parenthesis
 let g:pyindent_open_paren = '&sw * 2'
 " Indent after a nested parenthesis
