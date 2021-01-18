@@ -33,7 +33,7 @@ filetype plugin on
 
 
 " Appearance settings {{{
-colorscheme zenburn                     
+colorscheme seoul256                     
 set number relativenumber               
 set cursorline                          
 set nowrap		 	 	                
@@ -45,20 +45,22 @@ set termguicolors
 augroup latexHelp       
     autocmd!
     " Copy template to newly created file.
-    autocmd BufNewFile *.tex :-1read $HOME/dotfiles/.esqueleto.tex
+    autocmd BufNewFile *.tex
+                \ :-1read $HOME/dotfiles/.esqueleto.tex
     autocmd BufRead,BufNewFile *.tex
-                \ set spell                  
-                \ set textwidth=70           
+                \ set spell |
+                \ set textwidth=70 
 augroup end
 
 augroup pythonHelp
     autocmd!
     " Copy template to newly created file.
-    autocmd BufNewFile *.py :-1read $HOME/dotfiles/.esqueleto.py
+    autocmd BufNewFile *.py
+                \ :-1read $HOME/dotfiles/.esqueleto.py
     autocmd BufNewFile,BufRead *.py
+                \ source $HOME/dotfiles/google_python_style.vim |
                 \ set textwidth=79 |
-                \ set filetype=unix |
-                \ source $HOME/dotfiles/google_python_style.vim
+                \ set filetype=unix
 augroup end
 
 " Use real TAB on Makefiles.

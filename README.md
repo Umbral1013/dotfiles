@@ -2,8 +2,6 @@
 
 Here are my dotfiles.
 
-![Random image of my desktop](Screenshot_20201207_013819.png)
-
 I recommend to use `stow` to put the files in the correct
 place. It's done like this:
 
