@@ -1,7 +1,10 @@
 # .bash_functions
 
+# "mkcd" to mkdir and then cd to the result {{{
+mkcd() { mkdir "$@"&&cd "$@";}
+# }}}
 
-# cl - cd and ls at the same time -------- {{{
+# cl - cd and ls at the same time {{{
 #
 # Description:
 #   cd into a directory and then list the files inside
@@ -16,7 +19,6 @@ function cl() {
         ls -F --color=auto
 }
 # }}}
-
 
 # ex - Archive Extractor {{{
 #
@@ -44,7 +46,7 @@ ex ()
 }
 # }}}
 
-# Man in colors --- {{{
+# Man in colors {{{
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
     LESS_TERMCAP_me=$'\e[0m' \

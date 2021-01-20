@@ -1,12 +1,12 @@
-# BLOQUE DEL PROGRAMADOR -------------{{{
+# Bloque del programador {{{
 #
-#  NOMBRE DEL PROGRAMADOR   :
-#  NOMBRE DEL PROGRAMA      :
-#  FECHA                    :
-#  DESCRIPCIÓN DEL PROGRAMA :
+#  Nombre del programador   :
+#  Nombre del programa      :
+#  Fecha                    :
+#  Descripción del programa :
 #
 # -------------------------------------
 #
-#  DONDE:
+#  Donde:
 #
 # -------------------------------------}}}

@@ -42,7 +42,7 @@ set termguicolors
 
 
 " Autogroups {{{
-augroup latexHelp       
+augroup latex       
     autocmd!
     " Copy template to newly created file.
     autocmd BufNewFile *.tex
@@ -52,19 +52,27 @@ augroup latexHelp
                 \ set textwidth=70 
 augroup end
 
-augroup pythonHelp
+    augroup pythonCode
+        autocmd!
+        " Copy template to newly created file.
+        autocmd BufNewFile *.py
+                    \ :-1read $HOME/dotfiles/.esqueleto.py
+        autocmd BufNewFile,BufRead *.py
+                    \ source $HOME/dotfiles/google_python_style.vim |
+                    \ set textwidth=79 |
+                    \ set filetype=python
+    augroup end
+
+augroup groff
     autocmd!
-    " Copy template to newly created file.
-    autocmd BufNewFile *.py
-                \ :-1read $HOME/dotfiles/.esqueleto.py
-    autocmd BufNewFile,BufRead *.py
-                \ source $HOME/dotfiles/google_python_style.vim |
-                \ set textwidth=79 |
-                \ set filetype=unix
+    autocmd BufNewFile,BufRead *.ms
+                \ set spell |
+                \ set textwidth=70 |
+                \ set filetype=groff
 augroup end
 
 " Use real TAB on Makefiles.
-augroup makefileHelp
+augroup makefile
     autocmd!
     autocmd BufNewFile,BufRead Makefile,makefile set noexpandtab
 augroup end
