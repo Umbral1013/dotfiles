@@ -1,25 +1,25 @@
 " init.vim
 
 
-" Functionality settings {{{
+" Ajustes de funcionalidad {{{
 " TAB
 set softtabstop=4               
 set tabstop=4 
 set shiftwidth=4
 set expandtab
 
-" Dictionary
+" Diccionario
 set complete+=k                 
 set dictionary+=$HOME/dotfiles/Spanish.dic      
 set spelllang=es_mx,en_us      
 
-" Undo's and backups
+" Deshacer y copias de respaldo
 set nowritebackup                               
 set undofile			  		            	
 set nobackup			  						
 set noswapfile			 						
 
-" Miscellaneous
+" Misceláneos
 set foldmethod=marker
 set clipboard+=unnamedplus
 set smartindent                 
@@ -32,7 +32,7 @@ filetype plugin on
 " }}}
 
 
-" Appearance settings {{{
+" Ajustes de apariencia {{{
 colorscheme seoul256                     
 set number relativenumber               
 set cursorline                          
@@ -41,7 +41,7 @@ set termguicolors
 " }}}
 
 
-" Autogroups {{{
+" Autogrupos {{{
 augroup latex       
     autocmd!
     " Copy template to newly created file.
@@ -79,8 +79,8 @@ augroup end
 " }}}
 
 
-" Let {{{
-" Used for pydiction
+" Sentencias let {{{
+" Usado por pydiction
 let g:pydiction_location = 
             \'$HOME/
             \.local/
@@ -93,11 +93,11 @@ let g:pydiction_location =
             \pydiction/
             \complete-dict'
 
-" Indent after an open parenthesis
+" Sangría después de un paréntesis abierto
 let g:pyindent_open_paren = '&sw * 2'
-" Indent after a nested parenthesis
+" Sangría antes de un paréntesis anidado
 let g:pyindent_nested_paren = '&sw'
-" Indent for a continuation line
+" Sangría para una línea de continuación
 let g:pyindent_continue = '&sw * 2'
 
 " Netrw 
@@ -112,8 +112,8 @@ let g:tex_flavor = 'latex'
 " }}}
  
 
-" Remaps -------- {{{
-" Move between splits using [ALT + Vim_keys]
+" Reasignación de teclas {{{
+" Moverse entre los dobleces usando ALT + hjkl
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
 tnoremap <A-k> <C-\><C-N><C-w>k
@@ -127,6 +127,15 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-" Open folds with SPACE key
+" Abrir dobleces con la tecla ESPACIO
 nnoremap <space> za
+
+" Autocompletar paréntesis, llaves, corchetes, etc.
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
+inoremap {<CR> {<CR>}<Esc>0 
+inoremap [ []<Esc>i
+inoremap < <><Esc>i
+inoremap ' ''<Esc>i
+inoremap " ""<Esc>i
 " }}}
