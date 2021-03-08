@@ -15,15 +15,15 @@ set spelllang=es_mx,en_us
 
 " Deshacer y copias de respaldo
 set nowritebackup                               
-set undofile			  		            	
-set nobackup			  						
-set noswapfile			 						
+set undofile
+set nobackup
+set noswapfile
 
 " Misceláneos
 set foldmethod=marker
 set clipboard+=unnamedplus
 set smartindent                 
-set smartcase			 	    
+set smartcase   
 set updatetime=100              
 set wildmode=list:longest,full  
 set shortmess+=c                
@@ -33,7 +33,7 @@ filetype plugin on
 
 
 " Ajustes de apariencia {{{
-colorscheme seoul256                     
+colorscheme zenburn
 set number relativenumber               
 set cursorline                          
 set nowrap		 	 	                
@@ -65,7 +65,7 @@ augroup end
 
 augroup groff
     autocmd!
-    autocmd BufNewFile,BufRead *.ms
+    autocmd BufNewFile,BufRead *.ms,*.mom
                 \ set spell |
                 \ set textwidth=70 |
                 \ set filetype=groff
@@ -129,13 +129,4 @@ nnoremap <A-l> <C-w>l
 
 " Abrir dobleces con la tecla ESPACIO
 nnoremap <space> za
-
-" Autocompletar paréntesis, llaves, corchetes, etc.
-inoremap ( ()<Esc>i
-inoremap { {}<Esc>i
-inoremap {<CR> {<CR>}<Esc>0 
-inoremap [ []<Esc>i
-inoremap < <><Esc>i
-inoremap ' ''<Esc>i
-inoremap " ""<Esc>i
 " }}}

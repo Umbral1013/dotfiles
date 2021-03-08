@@ -15,3 +15,7 @@ export TERM="xterm-246color"
 
 # Autostart x at login
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
+
+# Defined by the user {{{
+export GS_FONTPATH="/usr/share/ghostscript/9.53.3/Resource/Font/"
+# }}}
