@@ -36,5 +36,4 @@ bind 'TAB:menu-complete'
 if [ -e $HOME/.bash_functions ]; then     
     source $HOME/.bash_functions
 fi
-
 # }}}

@@ -9,7 +9,7 @@ set shiftwidth=4
 set expandtab
 
 " Diccionario
-set complete+=k                 
+set complete+=k
 set dictionary+=$HOME/dotfiles/Spanish.dic      
 set spelllang=es_mx,en_us      
 
