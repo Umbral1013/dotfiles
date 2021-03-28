@@ -52,19 +52,25 @@ augroup latex
                 \ set textwidth=70 
 augroup end
 
-    augroup pythonCode
-        autocmd!
-        " Copy template to newly created file.
-        autocmd BufNewFile *.py
-                    \ :-1read $HOME/dotfiles/.esqueleto.py
-        autocmd BufNewFile,BufRead *.py
-                    \ source $HOME/dotfiles/google_python_style.vim |
-                    \ set textwidth=79 |
-                    \ set filetype=python
-    augroup end
+augroup pythonCode
+    autocmd!
+    " Copy template to newly created file.
+    autocmd BufNewFile *.py
+                \ :-1read $HOME/dotfiles/.esqueleto.py
+    autocmd BufNewFile,BufRead *.py
+                \ source $HOME/dotfiles/google_python_style.vim |
+                \ set textwidth=79 |
+                \ set filetype=python
+augroup end
 
 augroup groff
     autocmd!
+    " Template for regular mom documents.
+    autocmd BufNewFile documento.mom
+                \ :-1read $HOME/dotfiles/mom.mom
+    " Documents that just contain links.
+    autocmd BufNewFile enlace.mom
+                \ :-1read $HOME/dotfiles/enlace.mom
     autocmd BufNewFile,BufRead *.ms,*.mom
                 \ set spell |
                 \ set textwidth=70 |
