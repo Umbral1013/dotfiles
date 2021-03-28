@@ -1,0 +1,27 @@
+\# TÍTULO DEL DOCUMENTO:
+\#
+\# AUTOR:
+\#
+\# PROPÓSITO:
+\#
+\# FECHA:
+\#
+\# NOMBRE DEL ARCHIVO:
+\#
+\# HISTORIAL DEL DOCUMENTO:
+\#     Versión:
+\#
+\#     Fecha:
+\#
+\#     Comentarios:
+\# 
+
+.PRINTSTYLE TYPESET
+.PAPER LETTER
+.FAM H
+
+.TITLE
+.AUTHOR
+
+.START
+.HEADING 1 ""
