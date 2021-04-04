@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/alexis/Vídeos/Respaldo PC'
+let g:netrw_dirhist_9='/home/alexis/Vídeos/Respaldo PC/dibujos'
 let g:netrw_dirhist_8='/home/alexis/Documentos/escuela/democracia_y_soberania/reporte_de_lectura_consolidacion_de_la_independencia_de_mexico'
 let g:netrw_dirhist_7='/home/alexis/Documentos/escuela/democracia_y_soberania'
 let g:netrw_dirhist_6='/home/alexis/Documentos/escuela/democracia_y_soberania/ensayo_mexico_indigena'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_4='/home/alexis/Documentos/escuela/democracia_y_soberania/li
 let g:netrw_dirhist_3='/home/alexis/.local/share/fonts'
 let g:netrw_dirhist_2='/home/alexis/Documentos/escuela/democracia_y_soberania/reporte_de_lectura_consolidacion_de_la_independencia_de_mexico'
 let g:netrw_dirhist_1='/home/alexis/Documentos/escuela/democracia_y_soberania'
-let g:netrw_dirhist_0='/home/alexis/Documentos/escuela/democracia_y_soberania/glosario'
-let g:netrw_dirhist_9='/home/alexis/Documentos/escuela/democracia_y_soberania/ensayo_mexico_indigena'
