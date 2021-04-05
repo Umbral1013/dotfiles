@@ -1,6 +1,14 @@
-zsh/.zsh_history    # Ignore zsh history file
-vim/*               # Ignore everything under vim
+# Ignore zsh history file
+zsh/.zsh_history    
+
+# Ignore everything under vim
+vim/*               
 
 # Ignore local backup files
 *.bak   
 *.save
+
+# Ignore some newsboat files.
+newsboat/.config/newsboat/cache.db
+newsboat/.config/newsboat/history.search
+newsboat/.config/newsboat/urls
