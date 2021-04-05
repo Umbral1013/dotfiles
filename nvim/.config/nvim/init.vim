@@ -1,7 +1,7 @@
 " init.vim
 
+" ---- FUNCTIONALITY SETTINGS ---- {{{
 
-" Functionality settings. {{{
 " TAB.
 set softtabstop=4               
 set tabstop=4 
@@ -10,7 +10,7 @@ set expandtab
 
 " Dictionary.
 set complete+=k
-set dictionary+=$HOME/dotfiles/Spanish.dic      
+set dictionary+=$HOME/dotfiles/nvim/.config/nvim/spanish.dic
 set spelllang=es_mx,en_us      
 
 " Undo and backups.
@@ -29,24 +29,26 @@ set wildmode=list:longest,full
 set shortmess+=c                
 set path+=**                    
 filetype plugin on
-" }}}
 
+" ---------------------- }}}
 
-" Look and feel {{{
+" ---- LOOK AND FEEL ---- {{{
+
 colorscheme zenburn
 set number relativenumber               
 set cursorline                          
 set nowrap		 	 	                
 set termguicolors                       
-" }}}
 
+" ---------------------- }}}
 
-" Autogroups {{{
+" ---- AUTOGROUPS ---- {{{
+
 augroup latex       
     autocmd!
     " Copy template to newly created file.
     autocmd BufNewFile *.tex
-                \ :-1read $HOME/dotfiles/.esqueleto.tex
+                \ :-1read $HOME/dotfiles/templates/Templates/document.tex
     autocmd BufRead,BufNewFile *.tex
                 \ set spell |
                 \ set textwidth=70 
@@ -56,9 +58,9 @@ augroup pythonCode
     autocmd!
     " Copy template to newly created file.
     autocmd BufNewFile *.py
-                \ :-1read $HOME/dotfiles/.esqueleto.py
+                \ :-1read $HOME/dotfiles/templates/Templates/code.py
     autocmd BufNewFile,BufRead *.py
-                \ source $HOME/dotfiles/google_python_style.vim |
+                \ source $HOME/dotfiles/nvim/.config/nvim/google_python_style.vim |
                 \ set textwidth=79 |
                 \ set filetype=python
 augroup end
@@ -67,10 +69,10 @@ augroup groff
     autocmd!
     " Template for regular mom documents.
     autocmd BufNewFile documento.mom
-                \ :-1read $HOME/dotfiles/mom.mom
+                \ :-1read $HOME/dotfiles/templates/Templates/mom.mom
     " Documents that just contain links.
     autocmd BufNewFile enlace.mom
-                \ :-1read $HOME/dotfiles/enlace.mom
+                \ :-1read $HOME/dotfiles/templates/Templates/enlace.mom
     autocmd BufNewFile,BufRead *.ms,*.mom
                 \ set spell |
                 \ set textwidth=70 |
@@ -82,10 +84,11 @@ augroup makefile
     autocmd!
     autocmd BufNewFile,BufRead Makefile,makefile set noexpandtab
 augroup end
-" }}}
 
+" ---------------------- }}} 
 
-" Let {{{
+" ---- LET ---- {{{
+
 " Used by pydiction.
 let g:pydiction_location = 
             \'$HOME/
@@ -115,10 +118,11 @@ let g:netrw_winsize = 25
 " LaTeX 
 let g:tex_nospell = 1           
 let g:tex_flavor = 'latex'      
-" }}}
- 
 
-" Key remaps {{{
+" ---------------------- }}}
+
+" ---- KEY REMAPS ---- {{{
+
 " Move between folds using <alt> + hjkl
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
@@ -135,4 +139,5 @@ nnoremap <A-l> <C-w>l
 
 " Open folds using <space> key.
 nnoremap <space> za
-" }}}
+
+" ---------------------- }}}

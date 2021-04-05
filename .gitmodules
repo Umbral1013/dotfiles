@@ -1,0 +1,6 @@
+[submodule "nvim/.local/share/nvim/site/pack/plug/start/pydiction"]
+	path = nvim/.local/share/nvim/site/pack/plug/start/pydiction
+	url = https://github.com/rkulla/pydiction
+[submodule "nvim/.local/share/nvim/site/pack/plug/start/Zenburn"]
+	path = nvim/.local/share/nvim/site/pack/plug/start/Zenburn
+	url = https://github.com/jnurmine/Zenburn
