@@ -1,0 +1,12 @@
+# Colorscheme
+include /usr/share/doc/newsboat/contrib/colorschemes/simple
+
+# Auto-reload
+auto-reload yes
+reload-time 120
+reload-threads 150
+
+# URL to external command
+macro , set browser "firefox %u"
+macro v set browser "vlc %u" ; open-in-browser ; set browser "firefox %u"
+macro i set browser "gwenview -f %u"
