@@ -1,25 +1,25 @@
 " init.vim
 
 
-" Ajustes de funcionalidad {{{
-" TAB
+" Functionality settings. {{{
+" TAB.
 set softtabstop=4               
 set tabstop=4 
 set shiftwidth=4
 set expandtab
 
-" Diccionario
+" Dictionary.
 set complete+=k
 set dictionary+=$HOME/dotfiles/Spanish.dic      
 set spelllang=es_mx,en_us      
 
-" Deshacer y copias de respaldo
+" Undo and backups.
 set nowritebackup                               
 set undofile
 set nobackup
 set noswapfile
 
-" Misceláneos
+" Miscellaneous.
 set foldmethod=marker
 set clipboard+=unnamedplus
 set smartindent                 
@@ -32,7 +32,7 @@ filetype plugin on
 " }}}
 
 
-" Ajustes de apariencia {{{
+" Look and feel {{{
 colorscheme zenburn
 set number relativenumber               
 set cursorline                          
@@ -41,7 +41,7 @@ set termguicolors
 " }}}
 
 
-" Autogrupos {{{
+" Autogroups {{{
 augroup latex       
     autocmd!
     " Copy template to newly created file.
@@ -85,8 +85,8 @@ augroup end
 " }}}
 
 
-" Sentencias let {{{
-" Usado por pydiction
+" Let {{{
+" Used by pydiction.
 let g:pydiction_location = 
             \'$HOME/
             \.local/
@@ -99,11 +99,11 @@ let g:pydiction_location =
             \pydiction/
             \complete-dict'
 
-" Sangría después de un paréntesis abierto
+" Indent after an open parenthesis.
 let g:pyindent_open_paren = '&sw * 2'
-" Sangría antes de un paréntesis anidado
+" Indent before a nested parenthesis.
 let g:pyindent_nested_paren = '&sw'
-" Sangría para una línea de continuación
+" Indent for a continuation line.
 let g:pyindent_continue = '&sw * 2'
 
 " Netrw 
@@ -118,8 +118,8 @@ let g:tex_flavor = 'latex'
 " }}}
  
 
-" Reasignación de teclas {{{
-" Moverse entre los dobleces usando ALT + hjkl
+" Key remaps {{{
+" Move between folds using <alt> + hjkl
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
 tnoremap <A-k> <C-\><C-N><C-w>k
@@ -133,6 +133,6 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-" Abrir dobleces con la tecla ESPACIO
+" Open folds using <space> key.
 nnoremap <space> za
 " }}}
