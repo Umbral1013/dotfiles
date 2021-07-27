@@ -1,31 +1,25 @@
-#!/usr/bin/env bash
-# This file runs every time you open a new terminal window.
+#
+# ~/.bashrc
+#
 
-# ---- PREDEFINED ---- {{{
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-# Source global definitions.
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
 
-# User specific environment.
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
-then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-fi
-export PATH
+# Environmental variables.
+export EDITOR='/usr/bin/vim'
+export BROWSER='/usr/bin/firefox'
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+shopt -s autocd
+# After !! view completion.
+bind Space:magic-space
 
-# --------------------- }}}
-
-# ---- FUNCTIONS ---- {{{
-
+# Functions.
 # mkdir && cd.
 mkcd() { mkdir "$@"&&cd "$@";}
-
-#
+# cl
 # Description:
 #   cd into a directory and then list the files inside
 function cl() {
@@ -38,8 +32,7 @@ function cl() {
     # use your preferred ls command
         ls -F --color=auto
 }
-
-#
+# ex
 # Usage: ex <file>
 ex ()
 {
@@ -63,40 +56,12 @@ ex ()
   fi
 }
 
-# ---------------------- }}}
-
-# ---- ALIASES ---- {{{
-
-# Taken from https://opensource.com/article/19/7/bash-aliases
-alias lt='ls --human-readable --size -1 -S --classify' # List files by size.
-alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort" # List only mounted disks.
-alias gh='history | grep' # Find a command on bash history.
-alias left='ls -t -1' # Align listed files to the left.
-alias count='find . -type f | wc -l' # Counts files and files within, but ignores files that are not inside a folder.
-alias cpv='rsync -ah --info=progress2' # cp but with a progress bar.
-alias tcn='mv --force -t ~/.local/share/Trash ' # rm alternative, which doesn't remove files, instead moves them to trash directory.
-alias ve='python3 -m venv ./venv' # Create a virtual environment.
-alias va='source ./venv/bin/activate' # Activate the virtual environment.
-
-# Custom aliases.
-alias bashcfg="$EDITOR $HOME/.bashrc"
-alias nvimcfg="$EDITOR $HOME/.config/nvim/init.vim"
-alias ~="cd ~"
-alias ..="cd .."
-alias ...="cd ../.."
-alias encrypt="gpg -c --no-symkey-cache --cipher-algo AES256"
-alias translate="gawk -f <(curl -Ls git.io/translate) -- -shell"
-
-# ---------------------- }}}}
-
-# ---- COLORED OUTPUT ---- {{{
-
+# Colored output.
 alias diff="diff --color=auto"
-alias grep="grep --color=auto"
+alias grep="grep -n --color=auto"
 alias ls="ls --color=auto"
 alias ip="ip --color=auto"
 alias dmesg="dmesg --color=auto"
-
 # less
 export LESS=-R
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
@@ -106,7 +71,6 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
 export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
-
 # man
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
@@ -117,15 +81,11 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
-# ---------------------- }}}
 
-# Environmental variables.
-export EDITOR=/usr/bin/nvim
-export BROWSER=/usr/bin/firefox
-
-# Better tab-autocomplete.
-set show-all-if-ambiguous on
-bind 'TAB:menu-complete'
-
-# After !! view completion.
-bind Space:magic-space
+# Aliases.
+# Find a command on bash history.
+alias gh='history | grep'
+# rm alternative, which doesn't remove files, instead moves them to trash directory.
+alias tcn='mv --force -t ~/.local/share/Trash'
+alias encrypt="gpg -c --no-symkey-cache --cipher-algo AES256"
+alias ll='ls -lah'

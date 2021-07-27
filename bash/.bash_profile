@@ -1,19 +1,10 @@
-# .bash_profile
+#
+# ~/.bash_profile
+#
 
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+# Start X at login.
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
 fi
-
-# Source functions file
-if [ -e $HOME/.bash_functions ]; then
-    source $HOME/.bash_functions
-fi
-
-# User specific environment and startup programs
-export TERM="xterm-246color"
-
-# Autostart x at login
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
-
-export GS_FONTPATH="/usr/share/ghostscript/9.53.3/Resource/Font/"
