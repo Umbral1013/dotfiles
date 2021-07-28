@@ -1,9 +1,3 @@
-# Ignore zsh history file
-zsh/.zsh_history    
-
-# Ignore everything under vim
-vim/*               
-
 # Ignore local backup files
 *.bak   
 *.save
