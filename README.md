@@ -1,16 +1,14 @@
 # Umbral's dotfiles
 
-Here are my dotfiles.
-
-## Installation instructions:
-
+## Installation instructions (for Arch):
 ```bash
-# Install stow (instructions may vary between distros).
+# Install stow.
 sudo pacman -Sy stow
 
 # Clone this GitHub repository.
 git clone https://github.com/Umbral1013/dotfiles.git
 
 cd dotfiles
+# Change <name_of_the_folder> to whatever folder you need to use.
 stow <name_of_the_folder>
 ```
