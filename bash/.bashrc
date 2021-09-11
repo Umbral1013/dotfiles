@@ -11,6 +11,7 @@ PS1='[\u@\h \W]\$ '
 # Environmental variables.
 export EDITOR='/usr/bin/vim'
 export BROWSER='/usr/bin/firefox'
+export HISTCONTROL=erasedups	# Erase duplicates from history.
 
 shopt -s autocd
 # After !! view completion.
@@ -59,7 +60,6 @@ ex ()
 # Colored output.
 alias diff="diff --color=auto"
 alias grep="grep -n --color=auto"
-alias ls="ls --color=auto"
 alias ip="ip --color=auto"
 alias dmesg="dmesg --color=auto"
 # less
