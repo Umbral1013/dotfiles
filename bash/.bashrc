@@ -11,9 +11,12 @@ PS1='[\u@\h \W]\$ '
 # Environmental variables.
 export EDITOR='/usr/bin/vim'
 export BROWSER='/usr/bin/firefox'
-export HISTCONTROL=erasedups	# Erase duplicates from history.
+# Ignore duplicates and lines beggining with a space from history.
+export HISTCONTROL=ignoreboth:erasedups
 
 shopt -s autocd
+# Autocorrect spelling mistakes when using 'cd'.
+shopt -s cdspell
 # After !! view completion.
 bind Space:magic-space
 
@@ -87,3 +90,4 @@ man() {
 alias gh='history | grep'
 alias encrypt="gpg -c --no-symkey-cache --cipher-algo AES256"
 alias ll='ls -lah'
+alias rm='rm -i'

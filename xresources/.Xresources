@@ -1,7 +1,7 @@
 ! General font settings.
 *font: monospace 
 
-! Font rendering
+! Font rendering.
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
@@ -9,3 +9,7 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+
+! Sxiv.
+Sxiv.background: black
+Sxiv.foreground: white
