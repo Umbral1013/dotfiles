@@ -1,8 +1,6 @@
-# Ignore local backup files
+# Ignore local backup files.
 *.bak   
 *.save
 
-# Ignore some newsboat files.
-newsboat/.config/newsboat/cache.db
-newsboat/.config/newsboat/history.search
-newsboat/.config/newsboat/urls
+# Ignore vim folder.
+vim/
