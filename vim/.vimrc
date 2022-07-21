@@ -46,6 +46,7 @@ set wildmode=list:longest,full
 set path+=**	" Fuzzy finder.
 set number relativenumber
 set spelllang=es_mx,en_us
+set backupcopy=auto
 set complete+=k
 set breakindent
 set ignorecase
