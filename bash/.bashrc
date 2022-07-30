@@ -6,13 +6,20 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+# Git prompt.
+source /usr/share/git/completion/git-prompt.sh
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+# Git completion.
+source /usr/share/git/completion/git-completion.bash
 
 # Environmental variables.
 export EDITOR='/usr/bin/vim'
 export BROWSER='/usr/bin/firefox'
 # Ignore duplicates and lines beggining with a space from history.
 export HISTCONTROL=ignoreboth:erasedups
+# Show status of current git repository regarding upstream.
+export GIT_PS1_SHOWUPSTREAM=auto
 
 shopt -s autocd
 # Autocorrect spelling mistakes when using 'cd'.
