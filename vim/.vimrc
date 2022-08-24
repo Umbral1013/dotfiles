@@ -70,4 +70,5 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 "   Range: 233 (darkest) ~ 239 (lightest).
 "   Default: 237.
 let g:seoul256_background = 235
-colorscheme seoul256
+set background=dark
+colorscheme gruvbox
