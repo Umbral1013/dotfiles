@@ -1,12 +1,6 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
-" Breaking lines at 78 char. on plain text.
-augroup vimrcEx
-  au!
-  autocmd FileType text setlocal textwidth=78
-augroup END
-
 " Enable matchit if Vim can.
 if has('syntax') && has('eval')
   packadd! matchit
@@ -19,6 +13,12 @@ nnoremap ,html :-1read $HOME/dotfiles/snippets/skeleton.html
 			\ <CR>4jcit
 nnoremap ,meta :-1read $HOME/dotfiles/snippets/metadata.txt
 			\ <CR>A
+
+" Breaking lines at 78 char. on plain text.
+augroup vimrcEx
+  au!
+  autocmd FileType text setlocal textwidth=78
+augroup END
 
 " Groff.
 let nroff_is_groff=1
