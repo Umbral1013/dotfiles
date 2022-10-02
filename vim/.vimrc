@@ -1,3 +1,7 @@
+"
+" ~/.vimrc
+"
+
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
@@ -14,17 +18,17 @@ nnoremap ,html :-1read $HOME/dotfiles/snippets/skeleton.html
 nnoremap ,meta :-1read $HOME/dotfiles/snippets/metadata.txt
 			\ <CR>A
 
-" Breaking lines at 78 char. on plain text.
+" Break lines at 78 char. on plain text.
 augroup vimrcEx
   au!
   autocmd FileType text setlocal textwidth=78
 augroup END
 
-" Groff.
+" Groff preferences.
 let nroff_is_groff=1
 let nroff_space_errors=1
 let b:preprocs_as_sections=1
-" Highlight extra spacing in groff.
+" Highlight extra spacing while editing a groff file.
 hi def nroffDefinition term=italic cterm=italic gui=reverse
 hi def nroffDefSpecial term=italic,bold cterm=italic,bold
       		 \ gui=reverse,bold

@@ -1,5 +1,5 @@
 #
-# .inputrc
+# ~/.inputrc
 #
 
 # This prevents strange things from happening.
@@ -8,6 +8,7 @@ $include /etc/inputrc
 # Vi-style editing mode.
 set editing-mode vi
 set show-mode-in-prompt on
+
 # Cursor shape depending on the current mode.
 $if term=linux
 	set vi-ins-mode-string \1\e[?0c\2
@@ -16,6 +17,7 @@ $else
 	set vi-ins-mode-string \1\e[6 q\2
 	set vi-cmd-mode-string \1\e[2 q\2
 $endif
+
 # Search in the history when doing 'up' or 'down' motions.
 $if mode=vi
 	set keymap vi-command
@@ -29,6 +31,9 @@ $if mode=vi
 	"\e[A": history-search-backward
 	"\e[B": history-search-forward
 $endif
+
+# History expansion on the current line.
+Space:magic-space
 
 # Single tab completion.
 set show-all-if-ambiguous on

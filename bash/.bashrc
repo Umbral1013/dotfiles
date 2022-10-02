@@ -2,100 +2,79 @@
 # ~/.bashrc
 #
 
-# If not running interactively, don't do anything
+# If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-# Git prompt.
+alias ls="ls --color=auto"
+
 source /usr/share/git/completion/git-prompt.sh
+source /usr/share/git/completion/git-completion.bash
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
-# Git completion.
-source /usr/share/git/completion/git-completion.bash
+shopt -s cdspell
+shopt -s autocd
+shopt -s histappend
 
-# Environmental variables.
-export EDITOR='/usr/bin/vim'
-export BROWSER='/usr/bin/firefox'
-# Ignore duplicates and lines beggining with a space from history.
+export EDITOR="/usr/bin/vim"
+export BROWSER="/usr/bin/firefox"
+# Ignore duplicates and lines beggining with a space in history.
 export HISTCONTROL=ignoreboth:erasedups
-# Show status of current git repository regarding upstream.
+
+# Show status of current git repository compared to upstream.
 export GIT_PS1_SHOWUPSTREAM=auto
 
-shopt -s autocd
-# Enable history appending instead of overwriting when exiting.
-shopt -s histappend
-# Autocorrect spelling mistakes when using 'cd'.
-shopt -s cdspell
-# After !! view completion.
-bind Space:magic-space
+# Colored output for some applications.
+# Via https://wiki.archlinux.org/title/Color_output_in_console#Applications
+export LESS='-R --use-color -Dd+r$Du+b'
+export MANPAGER='less -R --use-color -Dd+r -Du+b'
+alias diff="diff --color=auto"
+alias grep="grep -n --color=auto"
+alias ip="ip --color=auto"
+alias dmesg="dmesg --color=auto"
 
-# Functions.
+alias gh="history | grep"
+alias encrypt="gpg -c --no-symkey-cache --cipher-algo AES256"
+alias ll="ls -lah"
+alias rm="rm -i"
+alias vimrc="$EDITOR $HOME/.vimrc"
+
 # mkdir && cd.
 mkcd() { mkdir "$@"&&cd "$@";}
+
 # cl
 # Description:
 #   cd into a directory and then list the files inside
 function cl() {
     DIR="$*";
-        # if no DIR given, go home
-        if [ $# -lt 1 ]; then
-                DIR=$HOME;
+    # if no DIR given, go home
+    if [ $# -lt 1 ]; then
+        DIR=$HOME;
     fi;
     builtin cd "${DIR}" && \
-    # use your preferred ls command
-        ls -F --color=auto
-}
+        # use your preferred ls command
+            ls -F --color=auto
+        }
+
 # ex
 # Usage: ex <file>
 ex ()
 {
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1   ;;
+            *.tar.gz)    tar xzf $1   ;;
+            *.bz2)       bunzip2 $1   ;;
+            *.rar)       unrar x $1     ;;
+            *.gz)        gunzip $1    ;;
+            *.tar)       tar xf $1    ;;
+            *.tbz2)      tar xjf $1   ;;
+            *.tgz)       tar xzf $1   ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1;;
+            *.7z)        7z x $1      ;;
+            *)           echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
-
-# Colored output.
-alias diff="diff --color=auto"
-alias grep="grep -n --color=auto"
-alias ip="ip --color=auto"
-alias dmesg="dmesg --color=auto"
-# less
-export LESS=-R
-export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
-export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
-export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
-export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
-export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
-export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
-export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
-# man
-man() {
-    LESS_TERMCAP_md=$'\e[01;31m' \
-    LESS_TERMCAP_me=$'\e[0m' \
-    LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[01;44;33m' \
-    LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[01;32m' \
-    command man "$@"
-}
-
-# Aliases.
-alias gh='history | grep'	# Find a command on bash history.
-alias encrypt="gpg -c --no-symkey-cache --cipher-algo AES256"
-alias ll='ls -lah'
-alias rm='rm -i'
