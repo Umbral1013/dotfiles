@@ -22,6 +22,8 @@ export HISTCONTROL=ignoreboth:erasedups
 export GIT_PS1_SHOWUPSTREAM=auto
 
 shopt -s autocd
+# Enable history appending instead of overwriting when exiting.
+shopt -s histappend
 # Autocorrect spelling mistakes when using 'cd'.
 shopt -s cdspell
 # After !! view completion.

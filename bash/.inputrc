@@ -1,3 +1,35 @@
+#
+# .inputrc
+#
+
+# This prevents strange things from happening.
+$include /etc/inputrc
+
+# Vi-style editing mode.
+set editing-mode vi
+set show-mode-in-prompt on
+# Cursor shape depending on the current mode.
+$if term=linux
+	set vi-ins-mode-string \1\e[?0c\2
+	set vi-cmd-mode-string \1\e[?8c\2
+$else
+	set vi-ins-mode-string \1\e[6 q\2
+	set vi-cmd-mode-string \1\e[2 q\2
+$endif
+# Search in the history when doing 'up' or 'down' motions.
+$if mode=vi
+	set keymap vi-command
+	# these are for vi-command mode
+	"\e[A": history-search-backward
+	"\e[B": history-search-forward
+	j: history-search-forward
+	k: history-search-backward
+	set keymap vi-insert
+	# these are for vi-insert mode
+	"\e[A": history-search-backward
+	"\e[B": history-search-forward
+$endif
+
 # Single tab completion.
 set show-all-if-ambiguous on
 
@@ -12,5 +44,6 @@ set mark-symlinked-directories on
 set colored-completion-prefix on
 # Color the common prefix in menu-complete.
 set menu-complete-display-prefix on
+
 # Disable ^C after Ctrl+C.
 set echo-control-characters off
