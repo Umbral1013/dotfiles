@@ -47,19 +47,24 @@ let g:netrw_altv=1
 let g:netrw_liststyle=3
 let g:netrw_winsize=30
 
+set title
 set path+=**	" Fuzzy finder.
 set number relativenumber
+set cursorline
 set spelllang=es_mx,en_us
 set complete+=k
 set backupcopy=auto
-set breakindent
 set ignorecase
 set smartcase
 set shortmess+=c
-set cursorline
-set nowrap
-set title
 set showmatch
+
+" Wrap long lines and preserve their indentation.
+" Via https://retracile.net/wiki/VimBreakIndent
+set wrap
+let &showbreak = '+++ '
+set breakindent
+set linebreak
 
 " First tab shows possible completions, on the second one wildmenu appears.
 set wildmode=list:longest,full
