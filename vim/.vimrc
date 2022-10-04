@@ -48,16 +48,17 @@ let g:netrw_liststyle=3
 let g:netrw_winsize=30
 
 set title
-set path+=**	" Fuzzy finder.
-set number relativenumber
+set showmatch
 set cursorline
+set number relativenumber
 set spelllang=es_mx,en_us
 set complete+=k
-set backupcopy=auto
-set ignorecase
-set smartcase
 set shortmess+=c
-set showmatch
+set backupcopy=auto
+set smartcase
+set ignorecase
+set autoindent
+set path+=**	" Fuzzy finder.
 
 " Wrap long lines and preserve their indentation.
 " Via https://retracile.net/wiki/VimBreakIndent
