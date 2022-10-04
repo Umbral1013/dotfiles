@@ -25,6 +25,7 @@ export GIT_PS1_SHOWUPSTREAM=auto
 
 # Colored output for some applications.
 # Via https://wiki.archlinux.org/title/Color_output_in_console#Applications
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R --use-color -Dd+r$Du+b'
 export MANPAGER='less -R --use-color -Dd+r -Du+b'
 alias diff="diff --color=auto"
