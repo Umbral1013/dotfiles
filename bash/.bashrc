@@ -2,41 +2,49 @@
 # ~/.bashrc
 #
 
-# If not running interactively, don't do anything.
+# If not running interactively, do not do anything.
 [[ $- != *i* ]] && return
 
-alias ls="ls --color=auto"
-
-source /usr/share/git/completion/git-prompt.sh
-source /usr/share/git/completion/git-completion.bash
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+# Set PATH so it includes user's private bin if it exists.
+if [ -d "$HOME/.local/bin" ]; then
+	PATH="$HOME/.local/bin:$PATH"
+fi
 
 shopt -s cdspell
 shopt -s autocd
 shopt -s histappend
 
-export EDITOR="/usr/bin/vim"
-export BROWSER="/usr/bin/firefox"
-# Ignore duplicates and lines beggining with a space in history.
-export HISTCONTROL=ignoreboth:erasedups
+source /usr/share/git/completion/git-prompt.sh
+source /usr/share/git/completion/git-completion.bash
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 # Show status of current git repository compared to upstream.
 export GIT_PS1_SHOWUPSTREAM=auto
 
-# Colored output for some applications.
+# Ignore duplicates and lines beggining with a space in history.
+export HISTCONTROL=ignoreboth:erasedups
+
+export PAGER=/usr/bin/less
+export EDITOR=/usr/bin/vi
+export VISUAL=/usr/bin/vim
+export BROWSER=/usr/bin/firefox
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# Colored output.
 # Via https://wiki.archlinux.org/title/Color_output_in_console#Applications
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R --use-color -Dd+r$Du+b'
 export MANPAGER='less -R --use-color -Dd+r -Du+b'
-alias diff="diff --color=auto"
-alias grep="grep -n --color=auto"
-alias ip="ip --color=auto"
-alias dmesg="dmesg --color=auto"
+alias ls='ls --color=auto'
+alias diff='diff --color=auto'
+alias grep='grep -n --color=auto'
+alias ip='ip --color=auto'
+alias dmesg='dmesg --color=auto'
 
-alias gh="history | grep"
-alias encrypt="gpg -c --no-symkey-cache --cipher-algo AES256"
-alias ll="ls -lah"
-alias rm="rm -i"
+alias gh='history | grep'
+alias encrypt='gpg -c --no-symkey-cache --cipher-algo AES256'
+alias ll='ls -lah'
+alias rm='rm -i'
 alias vimrc="$EDITOR $HOME/.vimrc"
 
 # mkdir && cd.
