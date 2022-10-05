@@ -1,3 +1,5 @@
+-- Via:
+-- https://github.com/jonniek/mpv-playlistmanager/raw/master/playlistmanager.lua
 local settings = {
 
   -- #### FUNCTIONALITY SETTINGS

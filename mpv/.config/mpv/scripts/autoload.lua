@@ -1,3 +1,6 @@
+-- Via:
+-- https://raw.githubusercontent.com/mpv-player/mpv/master/TOOLS/lua/autoload.lua
+--
 -- This script automatically loads playlist entries before and after the
 -- the currently played file. It does so by scanning the directory a file is
 -- located in when starting playback. It sorts the directory entries
