@@ -38,9 +38,11 @@ nnoremap <Leader>p <Esc>:bprevious<CR>
 nnoremap <leader>h <Esc>:call EasyMode()<CR>
 nnoremap <leader>H <Esc>:call HardMode()<CR>
 
-" Toggle spelling on and off.
-" Via https://stackoverflow.com/a/7286397
-nmap <Silent> <Leader>s <Esc>:set spell!<CR>
+" Toggle spellcheck on and off.
+" Via https://vim.fandom.com/wiki/Toggle_spellcheck_with_function_keys
+nnoremap <F5>
+			\ <Esc>:setlocal spell!
+			\ spelllang=es_mx,en_us<CR>
 
 " Groff preferences.
 let nroff_is_groff=1
@@ -58,12 +60,12 @@ hi def nroffDefSpecial
 			\ gui=reverse,bold
 
 " netrw preferences.
+let g:netrw_browsex_viewer="xdg-open"
 let g:netrw_banner=0
 let g:netrw_browse_split=4
 let g:netrw_altv=1
 let g:netrw_liststyle=3
 let g:netrw_winsize=30
-let g:netrw_browsex_viewer="xdg-open"
 
 set title
 set showmatch
@@ -101,4 +103,5 @@ let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
 set background=dark
+let g:gruvbox_material_spell_foreground='colored'
 colorscheme gruvbox-material
