@@ -1,6 +1,3 @@
 # Ignore local backup files.
 *.bak   
 *.save
-
-# Ignore vim folder.
-vim/
