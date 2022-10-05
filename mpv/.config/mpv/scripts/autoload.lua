@@ -1,4 +1,4 @@
--- Via:
+-- Obtained from:
 -- https://raw.githubusercontent.com/mpv-player/mpv/master/TOOLS/lua/autoload.lua
 --
 -- This script automatically loads playlist entries before and after the

@@ -25,6 +25,10 @@ $endif
 # History expansion on the current line.
 Space:magic-space
 
+# Ignore filename case when autocompleting.
+# Via https://www.webpro.nl/articles/getting-started-with-dotfiles
+set completion-ignore-case on
+
 # Single tab completion.
 set show-all-if-ambiguous on
 

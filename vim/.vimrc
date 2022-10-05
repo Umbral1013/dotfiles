@@ -40,9 +40,7 @@ nnoremap <leader>H <Esc>:call HardMode()<CR>
 
 " Toggle spelling on and off.
 " Via https://stackoverflow.com/a/7286397
-nmap <Silent> <Leader>spell
-			\ <Esc>:setlocal spelllang!=es_mx,en_us<CR>
-			\ <Esc>:setlocal spell!<CR>
+nmap <Silent> <Leader>s <Esc>:set spell!<CR>
 
 " Groff preferences.
 let nroff_is_groff=1
@@ -73,6 +71,7 @@ set cursorline
 set number relativenumber
 set complete+=k
 set backupcopy=auto
+set spelllang=es_mx,en_us
 set smartcase
 set ignorecase
 set autoindent

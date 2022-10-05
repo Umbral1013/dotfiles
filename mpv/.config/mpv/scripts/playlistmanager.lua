@@ -1,4 +1,4 @@
--- Via:
+-- Obtained from:
 -- https://github.com/jonniek/mpv-playlistmanager/raw/master/playlistmanager.lua
 local settings = {
 
