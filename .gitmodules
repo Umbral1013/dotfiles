@@ -1,3 +1,12 @@
 [submodule "vim/.vim/pack/colors/start/seoul256.vim"]
 	path = vim/.vim/pack/colors/start/seoul256.vim
 	url = https://github.com/junegunn/seoul256.vim
+[submodule "vim-plugins/.vim/pack/colors/start/Zenburn"]
+	path = vim-plugins/.vim/pack/colors/start/Zenburn
+	url = https://github.com/jnurmine/Zenburn/
+[submodule "vim-plugins/.vim/pack/utils/start/hardmode"]
+	path = vim-plugins/.vim/pack/utils/start/hardmode
+	url = https://github.com/dusans/vim-hardmode
+[submodule "vim-plugins/.vim/pack/utils/start/surround"]
+	path = vim-plugins/.vim/pack/utils/start/surround
+	url = https://github.com/tpope/vim-surround/
