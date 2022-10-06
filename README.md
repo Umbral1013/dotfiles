@@ -14,7 +14,7 @@ git submodule update --init --remote
 ```
 
 ## Installing
-1. Download and install Stow (preferably using your package manager).
+1. Download and install Stow (preferably using your system's package manager).
 2. Clone the GitHub repository in your home folder.
 
 ```bash
