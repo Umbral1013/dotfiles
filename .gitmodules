@@ -1,9 +1,12 @@
 [submodule "vim-plugins/.vim/pack/utils/start/surround"]
 	path = vim-plugins/.vim/pack/utils/start/surround
 	url = https://github.com/tpope/vim-surround/
-[submodule "vim-plugins/.vim/pack/colors/start/gruvbox-material"]
-	path = vim-plugins/.vim/pack/colors/start/gruvbox-material
-	url = https://github.com/sainnhe/gruvbox-material
 [submodule "vim-plugins/.vim/pack/utils/start/hardmode"]
 	path = vim-plugins/.vim/pack/utils/start/hardmode
 	url = https://github.com/dusans/vim-hardmode
+[submodule "vim-plugins/.vim/pack/colors/start/seoul256"]
+	path = vim-plugins/.vim/pack/colors/start/seoul256
+	url = https://github.com/junegunn/seoul256.vim
+[submodule "vim-plugins/.vim/pack/utils/start/vim-ale"]
+	path = vim-plugins/.vim/pack/utils/start/vim-ale
+	url = https://github.com/dense-analysis/ale

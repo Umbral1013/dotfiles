@@ -66,6 +66,11 @@ let g:netrw_liststyle=3
 let g:netrw_winsize=30
 let g:netrw_list_hide=netrw_gitignore#Hide()
 
+" Linter options.
+let g:ale_linters = {'python': ['flake8']}
+let g:ale_fixers = {'python': ['yapf']}
+let g:ale_fix_on_save = 1
+
 set title
 set showmatch
 set cursorline
@@ -102,5 +107,4 @@ let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
 set background=dark
-let g:gruvbox_material_spell_foreground='colored'
-colorscheme gruvbox-material
+colorscheme seoul256
