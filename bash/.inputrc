@@ -23,7 +23,9 @@ $if mode=vi
 $endif
 
 # History expansion on the current line.
+$if Bash
 Space:magic-space
+$endif
 
 # Ignore filename case when autocompleting.
 # Via https://www.webpro.nl/articles/getting-started-with-dotfiles
