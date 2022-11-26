@@ -23,6 +23,8 @@ $if mode=vi
 $endif
 
 # History expansion on the current line.
+# Conditionals are needed to avoid problems.
+# Via https://unix.stackexchange.com/a/315194
 $if Bash
 Space:magic-space
 $endif
