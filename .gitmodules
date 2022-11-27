@@ -10,3 +10,6 @@
 [submodule "vim-plugins/.vim/pack/utils/start/vim-ale"]
 	path = vim-plugins/.vim/pack/utils/start/vim-ale
 	url = https://github.com/dense-analysis/ale
+[submodule "vim-plugins/.vim/pack/utils/start/vim-pony"]
+	path = vim-plugins/.vim/pack/utils/start/vim-pony
+	url = https://github.com/jmcomets/vim-pony/

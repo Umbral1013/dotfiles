@@ -67,9 +67,9 @@ let g:netrw_winsize=30
 let g:netrw_list_hide=netrw_gitignore#Hide()
 
 " Linter options.
+let g:ale_fix_on_save = 1
 let g:ale_linters = {'python': ['flake8']}
 let g:ale_fixers = {'python': ['yapf']}
-let g:ale_fix_on_save = 1
 
 set title
 set showmatch
