@@ -47,6 +47,7 @@ alias ll='ls -lah'
 alias rm='rm -i'
 alias mv='mv -vu'
 alias vimrc="$EDITOR $HOME/.vimrc"
+alias gm='env LD_BIND_NOW=1 gamemoderun'
 
 # mkdir && cd.
 mkcd() { mkdir "$@"&&cd "$@";}
