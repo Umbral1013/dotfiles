@@ -2,7 +2,6 @@
 *font: monospace 
 
 ! Font rendering.
-Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
