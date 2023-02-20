@@ -21,6 +21,8 @@ PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 # Show status of current git repository compared to upstream.
 export GIT_PS1_SHOWUPSTREAM=auto
 
+# Read the manual of strftime to get more details on the format.
+export HISTTIMEFORMAT="[%F %T] "
 # Ignore duplicates and lines beggining with a space in history.
 export HISTCONTROL=ignoreboth:erasedups
 
@@ -52,9 +54,7 @@ alias gm='env LD_BIND_NOW=1 gamemoderun'
 # mkdir && cd.
 mkcd() { mkdir "$@"&&cd "$@";}
 
-# cl
-# Description:
-#   cd into a directory and then list the files inside
+# cd into a directory and then list the files inside.
 function cl() {
     DIR="$*";
     # if no DIR given, go home
@@ -66,7 +66,7 @@ function cl() {
             ls -F --color=auto
         }
 
-# Usage: ex <file>
+# Extract files with a different program depending on the filetype.
 ex ()
 {
     if [ -f $1 ] ; then
@@ -74,7 +74,7 @@ ex ()
             *.tar.bz2)   tar xjf $1   ;;
             *.tar.gz)    tar xzf $1   ;;
             *.bz2)       bunzip2 $1   ;;
-            *.rar)       unrar x $1     ;;
+            *.rar)       unrar x $1   ;;
             *.gz)        gunzip $1    ;;
             *.tar)       tar xf $1    ;;
             *.tbz2)      tar xjf $1   ;;
@@ -93,5 +93,22 @@ ex ()
 # Via https://gist.github.com/ahmed-musallam/27de7d7c5ac68ecbd1ed65b6b48416f9
 pdfcompress ()
 {
-   gs -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dPDFSETTINGS=/screen -dEmbedAllFonts=true -dSubsetFonts=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=144 -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=144 -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=144 -sOutputFile=$1.compressed.pdf $1;
+   gs \
+   -q \
+   -dNOPAUSE \
+   -dBATCH \
+   -dSAFER \
+   -sDEVICE=pdfwrite \
+   -dCompatibilityLevel=1.3 \
+   -dPDFSETTINGS=/screen \
+   -dEmbedAllFonts=true \
+   -dSubsetFonts=true \
+   -dColorImageDownsampleType=/Bicubic \
+   -dColorImageResolution=144 \
+   -dGrayImageDownsampleType=/Bicubic \
+   -dGrayImageResolution=144 \
+   -dMonoImageDownsampleType=/Bicubic \
+   -dMonoImageResolution=144 \
+   -sOutputFile=$1.compressed.pdf \
+   $1;
 }

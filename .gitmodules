@@ -7,3 +7,6 @@
 [submodule "vim-plugins/.vim/pack/utils/start/vim-ale"]
 	path = vim-plugins/.vim/pack/utils/start/vim-ale
 	url = https://github.com/dense-analysis/ale
+[submodule "vim-plugins/.vim/pack/colors/start/zenburn"]
+	path = vim-plugins/.vim/pack/colors/start/zenburn
+	url = https://github.com/jnurmine/Zenburn.git
