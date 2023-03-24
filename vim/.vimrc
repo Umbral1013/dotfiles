@@ -14,14 +14,7 @@ augroup vimrcEx
 	autocmd FileType text setlocal textwidth=78
 augroup END
 
-" Enable hard mode by default.
-" Via https://github.com/dusans/vim-hardmode#readme
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
 let mapleader=","
-
-nnoremap <leader>h <Esc>:call EasyMode()<CR>
-nnoremap <leader>H <Esc>:call HardMode()<CR>
 
 nnoremap <leader>n <Esc>:bnext<CR>
 nnoremap <leader>p <Esc>:bprevious<CR>
