@@ -1,11 +1,8 @@
 # Umbral's dotfiles
 
-Hello.
-
 ## Managing
 This project has submodules. 
 To initiate them, run the following command:
-
 ```bash
 git submodule update --init --recursive
 ```
