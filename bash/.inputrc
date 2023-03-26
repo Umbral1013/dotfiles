@@ -22,6 +22,16 @@ $if mode=vi
 	"\e[B": history-search-forward
 $endif
 
+# Different cursors for different modes.
+# Via https://wiki.archlinux.org/title/Readline
+$if term=linux
+	set vi-ins-mode-string \1\e[?0c\2
+	set vi-cmd-mode-string \1\e[?8c\2
+$else
+	set vi-ins-mode-string \1\e[6 q\2
+	set vi-cmd-mode-string \1\e[2 q\2
+$endif
+
 # History expansion on the current line.
 # Conditionals are needed to avoid problems.
 # Via https://unix.stackexchange.com/a/315194
