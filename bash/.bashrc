@@ -16,10 +16,10 @@ shopt -s histappend
 
 source /usr/share/git/completion/git-prompt.sh
 source /usr/share/git/completion/git-completion.bash
-PS1='[\u@\h:\W$(__git_ps1 " (%s)")]\$ '
+PROMPT_COMMAND='__git_ps1 "[\u@\h:\w]" "\\\$ "'
 
 # Show hints about the current dirty state in color.
-export GIT_PS1_SHOWCOLORHINTS=1
+export GIT_PS1_SHOWCOLORHINTS=true
 # Show status of current git repository compared to upstream.
 export GIT_PS1_SHOWUPSTREAM=auto
 
