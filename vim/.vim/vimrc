@@ -61,8 +61,16 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 
 " Linter and fixer options.
 let g:ale_fix_on_save=1
-let g:ale_linters={'python': ['flake8'], 'html': ['vscodehtml'], 'css': ['vscodecss']}
-let g:ale_fixers={'python': ['yapf'], 'html': ['prettier'], 'css': ['prettier']}
+let g:ale_linters={
+			\ 'python': ['flake8'],
+			\ 'html': ['vscodehtml'],
+			\ 'css': ['vscodecss']
+			\ }
+let g:ale_fixers={
+			\ 'python': ['yapf'],
+			\ 'html': ['prettier'],
+			\ 'css': ['prettier']
+			\ }
 
 set title
 set showmatch
