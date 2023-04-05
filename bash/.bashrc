@@ -1,21 +1,39 @@
 #
-# ~/.bashrc
+# .bashrc
 #
 
 # If not running interactively, do not do anything.
 [[ $- != *i* ]] && return
 
-# Set PATH so it includes user's private bin if it exists.
-if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/.local/bin:$PATH"
+# Source global definitions.
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
 fi
+
+# User specific environment.
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
+fi
+
+unset rc
 
 shopt -s cdspell
 shopt -s autocd
 shopt -s histappend
 
-source /usr/share/git/completion/git-prompt.sh
-source /usr/share/git/completion/git-completion.bash
+source $HOME/.local/bin/git-prompt.sh
+source $HOME/.local/bin/git-completion.sh
 PS1='[\u@\h:\W$(__git_ps1 " (%s)")]\$ '
 
 # Show hints about the current dirty state in color.
@@ -36,7 +54,6 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Colored output.
 # Via https://wiki.archlinux.org/title/Color_output_in_console#Applications
-export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R --use-color -Dd+r$Du+b'
 export MANPAGER='less -R --use-color -Dd+r -Du+b'
 alias ls='ls --color=auto'
