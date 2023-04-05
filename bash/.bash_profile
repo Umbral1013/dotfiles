@@ -2,8 +2,10 @@
 # ~/.bash_profile
 #
 
-# I do not know what this does, but it seems important.
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
 
 # Autostart X at login.
 # Via https://wiki.archlinux.org/title/Xinit#Autostart_X_at_login
