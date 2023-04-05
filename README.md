@@ -25,7 +25,7 @@ git clone https://github.com/Umbral1013/dotfiles.git
 cd ~/dotfiles
 ```
 
-4. Use `stow` on the packages you wish to install.
+4. Use `stow` on the packages you wish to deploy.
 ```bash
 stow <package_name>
 ```
