@@ -9,10 +9,12 @@ alias rm='rm -i'
 alias mv='mv -vu'
 alias vimrc="$EDITOR $HOME/.vim/vimrc"
 alias gg='env LD_BIND_NOW=1 gamemoderun'
+alias cl='clear'
+alias e="$VISUAL"
 
-alias gd='/usr/bin/git diff'
-alias gl='/usr/bin/git log --pretty'
-alias gc='/usr/bin/git commit -am'
-alias gpush='/usr/bin/git push'
-alias gstat='/usr/bin/git status'
-alias gpull='/usr/bin/git pull'
+alias gd='git diff'
+alias gl='git log --pretty'
+alias gc='git commit -am'
+alias gp='git push'
+alias gstat='git status'
+alias gpull='git pull'
