@@ -1,0 +1,65 @@
+#
+# Bash functions.
+#
+
+# mkdir && cd.
+mkcd() { mkdir "$@"&&cd "$@";}
+
+# cd into a directory and then list the files inside.
+function cl() {
+    DIR="$*";
+    # if no DIR given, go home
+    if [ $# -lt 1 ]; then
+        DIR=$HOME;
+    fi;
+    builtin cd "${DIR}" && \
+        # use your preferred ls command
+            ls -F --color=auto
+        }
+
+# Extract files with a different program depending on the filetype.
+ex ()
+{
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1   ;;
+            *.tar.gz)    tar xzf $1   ;;
+            *.bz2)       bunzip2 $1   ;;
+            *.rar)       unrar x $1   ;;
+            *.gz)        gunzip $1    ;;
+            *.tar)       tar xf $1    ;;
+            *.tbz2)      tar xjf $1   ;;
+            *.tgz)       tar xzf $1   ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1;;
+            *.7z)        7z x $1      ;;
+            *)           echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+# Optimize PDF files for screens.
+# Via https://gist.github.com/ahmed-musallam/27de7d7c5ac68ecbd1ed65b6b48416f9
+pdfcompress ()
+{
+   gs \
+   -q \
+   -dNOPAUSE \
+   -dBATCH \
+   -dSAFER \
+   -sDEVICE=pdfwrite \
+   -dCompatibilityLevel=1.3 \
+   -dPDFSETTINGS=/screen \
+   -dEmbedAllFonts=true \
+   -dSubsetFonts=true \
+   -dColorImageDownsampleType=/Bicubic \
+   -dColorImageResolution=144 \
+   -dGrayImageDownsampleType=/Bicubic \
+   -dGrayImageResolution=144 \
+   -dMonoImageDownsampleType=/Bicubic \
+   -dMonoImageResolution=144 \
+   -sOutputFile=$1.compressed.pdf \
+   $1;
+}
