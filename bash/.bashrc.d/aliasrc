@@ -9,8 +9,8 @@ alias rm='rm -i'
 alias mv='mv -vu'
 alias vimrc="$EDITOR $HOME/.vim/vimrc"
 alias game='env LD_BIND_NOW=1 gamemoderun'
-alias cl='clear'
 alias e="$VISUAL"
+alias cls='clear'
 
 alias gadd='git add'
 alias gdiff='git diff'
@@ -19,3 +19,4 @@ alias gcommit='git commit -am'
 alias gpush='git push'
 alias gstatus='git status'
 alias gpull='git pull'
+alias gclone='git clone'
