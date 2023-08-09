@@ -2,7 +2,7 @@
 " ~/.vimrc
 "
 
-" Let's begin with a nice base.
+" Let us begin with a nice base.
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
@@ -19,6 +19,9 @@ augroup END
 
 let mapleader=","
 
+" Edit my Vim settings in a new tab.
+nnoremap <leader>s <Esc>:tabe $MYVIMRC<CR>
+
 " Move between buffers with ease.
 nnoremap <leader>n <Esc>:bnext<CR>
 nnoremap <leader>p <Esc>:bprevious<CR>
@@ -29,7 +32,7 @@ nnoremap <silent> <F5>
             \ <Esc>:setlocal spell!
             \ spelllang=es_mx,en_us<CR>
 
-" 'Snippets'.
+" Snippets.
 nnoremap <leader>date
             \ <Esc>:put =strftime('%c')
             \ <CR>kJ
@@ -114,8 +117,7 @@ let &showbreak='+++ '
 set breakindent
 set linebreak
 
-" First tab shows possible completions, on the second one wildmenu appears.
-set wildmode=list:longest,full
+set wildoptions=pum
 
 " Show Vim in truecolor if it is possible.
 if (has("termguicolors"))
