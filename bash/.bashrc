@@ -7,7 +7,7 @@
 
 # Source global definitions.
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
 # User specific environment.
@@ -17,17 +17,6 @@ then
 fi
 export PATH
 
-# User specific aliases and functions.
-if [ -d ~/.bashrc.d ]; then
-	for rc in ~/.bashrc.d/*; do
-		if [ -f "$rc" ]; then
-			. "$rc"
-		fi
-	done
-fi
-
-unset rc
-
 shopt -s cdspell
 shopt -s autocd
 shopt -s histappend
@@ -36,3 +25,114 @@ shopt -s histappend
 export HISTTIMEFORMAT="[%F %T] "
 # Ignore duplicates and lines beggining with a space in history.
 export HISTCONTROL=ignoreboth:erasedups
+
+# /// Bash prompt ///
+source $HOME/.local/bin/git-prompt.sh
+source $HOME/.local/bin/git-completion.sh
+PS1='\u@\h:\W$(__git_ps1 " (%s)")\$ '
+
+# Show hints about the current dirty state in color.
+export GIT_PS1_SHOWCOLORHINTS=true
+# Show status of current git repository compared to upstream.
+export GIT_PS1_SHOWUPSTREAM=auto
+
+# /// Bash functions ///
+mkcd() { mkdir "$@"&&cd "$@";}  # mkdir && cd at the same time.
+
+# cd into a directory and then list the files inside.
+function cl() {
+    DIR="$*";
+    # if no DIR given, go home
+    if [ $# -lt 1 ]; then
+        DIR=$HOME;
+    fi;
+    builtin cd "${DIR}" && \
+        # use your preferred ls command
+            ls -F --color=auto
+        }
+
+# Extract files with a different program depending on the filetype.
+ex ()
+{
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1   ;;
+            *.tar.gz)    tar xzf $1   ;;
+            *.bz2)       bunzip2 $1   ;;
+            *.rar)       unrar x $1   ;;
+            *.gz)        gunzip $1    ;;
+            *.tar)       tar xf $1    ;;
+            *.tbz2)      tar xjf $1   ;;
+            *.tgz)       tar xzf $1   ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1;;
+            *.7z)        7z x $1      ;;
+            *)           echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+# Optimize PDF files for screens.
+# Via https://gist.github.com/ahmed-musallam/27de7d7c5ac68ecbd1ed65b6b48416f9
+pdfcompress ()
+{
+    gs \
+        -q \
+        -dNOPAUSE \
+        -dBATCH \
+        -dSAFER \
+        -sDEVICE=pdfwrite \
+        -dCompatibilityLevel=1.3 \
+        -dPDFSETTINGS=/screen \
+        -dEmbedAllFonts=true \
+        -dSubsetFonts=true \
+        -dColorImageDownsampleType=/Bicubic \
+        -dColorImageResolution=144 \
+        -dGrayImageDownsampleType=/Bicubic \
+        -dGrayImageResolution=144 \
+        -dMonoImageDownsampleType=/Bicubic \
+        -dMonoImageResolution=144 \
+        -sOutputFile=$1.compressed.pdf \
+        $1;
+    }
+
+# /// Environment variables ///
+export PAGER=/usr/bin/less
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+export BROWSER=/usr/bin/firefox
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# /// Colored output ///
+# Via https://wiki.archlinux.org/title/Color_output_in_console#Applications
+export LESS='-R --use-color -Dd+r$Du+b'
+export MANPAGER='less -R --use-color -Dd+r -Du+b'
+
+alias ls='ls --color=auto'
+alias diff='diff --color=auto'
+alias grep='grep -n --color=auto'
+alias ip='ip --color=auto'
+alias dmesg='dmesg --color=auto'
+
+# /// Bash aliases ///
+alias gh='history | grep'
+alias encrypt='gpg -c --no-symkey-cache --cipher-algo AES256'
+alias ll='ls -lah'
+alias rm='rm -i'
+alias mv='mv -vu'
+alias vimrc="$EDITOR $HOME/.vim/vimrc"
+alias game='env LD_BIND_NOW=1 gamemoderun'
+alias e="$VISUAL"
+alias cls='clear'
+
+# git aliases.
+alias gadd='git add'
+alias gdiff='git diff'
+alias glog='git log --pretty'
+alias gcommit='git commit -am'
+alias gpush='git push'
+alias gstatus='git status'
+alias gpull='git pull'
+alias gclone='git clone'

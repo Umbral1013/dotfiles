@@ -17,10 +17,18 @@ augroup vimrcEx
     autocmd FileType text setlocal textwidth=78
 augroup END
 
+" Save manually-created folds when closing a file.
+" Via https://www.linux.com/training-tutorials/vim-tips-folding-fun/
+augroup foldfun
+    au!
+    au BufWinLeave * mkview
+    au BufWinEnter * silent loadview
+augroup END
+
 let mapleader=","
 
 " Edit my Vim settings in a new tab.
-nnoremap <leader>s <Esc>:tabe $MYVIMRC<CR>
+nnoremap <leader>v <Esc>:tabe $MYVIMRC<CR>
 
 " Move between buffers with ease.
 nnoremap <leader>n <Esc>:bnext<CR>
@@ -125,4 +133,4 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-colorscheme retrobox
+colorscheme habamax
