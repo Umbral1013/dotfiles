@@ -26,7 +26,6 @@ export HISTTIMEFORMAT="[%F %T] "
 # Ignore duplicates and lines beggining with a space in history.
 export HISTCONTROL=ignoreboth:erasedups
 
-# /// Bash prompt ///
 source $HOME/.local/bin/git-prompt.sh
 source $HOME/.local/bin/git-completion.sh
 PS1='\u@\h:\W$(__git_ps1 " (%s)")\$ '
@@ -36,7 +35,6 @@ export GIT_PS1_SHOWCOLORHINTS=true
 # Show status of current git repository compared to upstream.
 export GIT_PS1_SHOWUPSTREAM=auto
 
-# /// Bash functions ///
 mkcd() { mkdir "$@"&&cd "$@";}  # mkdir && cd at the same time.
 
 # cd into a directory and then list the files inside.
@@ -98,14 +96,13 @@ pdfcompress ()
         $1;
     }
 
-# /// Environment variables ///
 export PAGER=/usr/bin/less
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 export BROWSER=/usr/bin/firefox
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# /// Colored output ///
+# Colored output.
 # Via https://wiki.archlinux.org/title/Color_output_in_console#Applications
 export LESS='-R --use-color -Dd+r$Du+b'
 export MANPAGER='less -R --use-color -Dd+r -Du+b'
@@ -116,7 +113,6 @@ alias grep='grep -n --color=auto'
 alias ip='ip --color=auto'
 alias dmesg='dmesg --color=auto'
 
-# /// Bash aliases ///
 alias gh='history | grep'
 alias encrypt='gpg -c --no-symkey-cache --cipher-algo AES256'
 alias ll='ls -lah'

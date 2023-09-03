@@ -17,14 +17,6 @@ augroup vimrcEx
     autocmd FileType text setlocal textwidth=78
 augroup END
 
-" Save manually-created folds when closing a file.
-" Via https://www.linux.com/training-tutorials/vim-tips-folding-fun/
-augroup foldfun
-    au!
-    au BufWinLeave * mkview
-    au BufWinEnter * silent loadview
-augroup END
-
 let mapleader=","
 
 " Edit my Vim settings in a new tab.
@@ -83,7 +75,6 @@ let g:ale_linters={
             \ 'css': ['vscodecss']
             \ }
 let g:ale_fixers={
-            \ '*': ['remove_trailing_lines', 'trim_whitespace'],
             \ 'python': ['yapf'],
             \ 'lua': ['lua-format'],
             \ 'html': ['prettier'],
