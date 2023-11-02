@@ -1,0 +1,429 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+  <menu id="root-menu" label="Openbox 3">
+    <item label="Ejecutar...">
+      <action name="Execute">
+        <execute>gmrun</execute>
+      </action>
+    </item>
+    <separator />
+    <item label="Terminal">
+      <action name="Execute">
+        <execute>terminator -u</execute>
+      </action>
+    </item>
+    <item label="Navegador web">
+      <action name="Execute">
+        <execute>x-www-browser</execute>
+      </action>
+    </item>
+    <item label="Explorador de archivos">
+      <action name="Execute">
+        <execute>thunar</execute>
+      </action>
+    </item>
+    <item label="Editor de texto">
+      <action name="Execute">
+        <execute>geany</execute>
+      </action>
+    </item>
+    <item label="Reproductor multimedia">
+      <action name="Execute">
+        <execute>vlc</execute>
+      </action>
+    </item>
+    <separator />
+    <menu id="accessories" label="Accesorios">
+      <item label="Búsqueda de archivos Catfish">
+        <action name="Execute">
+          <execute>catfish</execute>
+        </action>
+      </item>
+      <item label="Cryptomator">
+        <action name="Execute">
+          <execute>flatpak run org.cryptomator.Cryptomator</execute>
+        </action>
+      </item>
+      <item label="KeePassXC">
+        <action name="Execute">
+          <execute>keepassxc</execute>
+        </action>
+      </item>
+      <item label="Gestor de Archivadores">
+        <action name="Execute">
+          <execute>file-roller</execute>
+        </action>
+      </item>
+      <item label="Editor de texto Geany">
+        <action name="Execute">
+          <execute>geany</execute>
+        </action>
+      </item>
+      <item label="Gestor de tareas (htop)">
+        <action name="Execute">
+          <execute>x-terminal-emulator -e htop</execute>
+        </action>
+      </item>
+      <item label="Terminal">
+        <action name="Execute">
+          <execute>x-terminal-emulator</execute>
+        </action>
+      </item>
+      <item label="Gestor de archivos Thunar">
+        <action name="Execute">
+          <execute>thunar</execute>
+        </action>
+      </item>
+      <item label="Gestor de archivos Thunar (superusuario)">
+        <action name="Execute">
+          <execute>cbpp-gksudo thunar</execute>
+        </action>
+      </item>
+    </menu>
+    <menu id="graphics" label="Gráficos">
+      <item label="GIMP">
+        <action name="Execute">
+          <execute>gimp</execute>
+        </action>
+      </item>
+      <item label="Simple Scan">
+        <action name="Execute">
+          <execute>simple-scan</execute>
+        </action>
+      </item>
+      <item label="Krita">
+        <action name="Execute">
+          <execute>flatpak run org.kde.krita</execute>
+        </action>
+      </item>
+      <item label="Visor de imágenes Viewnior">
+        <action name="Execute">
+          <execute>viewnior</execute>
+        </action>
+      </item>
+      <menu id="graphicsScreenshots" label="Tomar captura de pantalla">
+        <item label="Screenshooter">
+          <action name="Execute">
+            <execute>xfce4-screenshooter</execute>
+          </action>
+        </item>
+        <separator label="scrot" />
+        <item label="Ahora">
+          <action name="Execute">
+            <execute>scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp;amp; viewnior ~/images/$f'</execute>
+          </action>
+        </item>
+        <item label="En 5 segundos...">
+          <action name="Execute">
+            <execute>scrot -d 5 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp;amp; viewnior ~/images/$f'</execute>
+          </action>
+        </item>
+        <item label="En 10 segundos...">
+          <action name="Execute">
+            <execute>scrot -d 10 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp;amp; viewnior ~/images/$f'</execute>
+          </action>
+        </item>
+        <item label="Área seleccionada... (click &amp; arrastrar el cursor)">
+          <action name="Execute">
+            <execute>scrot -s '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp;amp; viewnior ~/images/$f'</execute>
+          </action>
+        </item>
+      </menu>
+    </menu>
+    <menu id="games" label="Juegos">
+      <item label="Xonotic">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun flatpak run org.xonotic.Xonotic</execute>
+        </action>
+      </item>
+      <item label="Battle for Wesnoth">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun flatpak run org.wesnoth.Wesnoth</execute>
+        </action>
+      </item>
+      <item label="Steam">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun flatpak run com.valvesoftware.Steam</execute>
+        </action>
+      </item>
+      <item label="FreeDoom 1">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun freedoom1</execute>
+        </action>
+      </item>
+      <item label="FreeDoom 2">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun freedoom2</execute>
+        </action>
+      </item>
+      <item label="Warzone 2100">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun flatpak run net.wz2100.wz2100</execute>
+        </action>
+      </item>
+    </menu>
+    <menu id="multimedia" label="Multimedia">
+      <item label="Reproductor multimedia VLC">
+        <action name="Execute">
+          <execute>vlc</execute>
+        </action>
+      </item>
+      <item label="Control de volumen">
+        <action name="Execute">
+          <execute>mate-volume-control</execute>
+        </action>
+      </item>
+      <item label="Xfburn">
+        <action name="Execute">
+          <execute>xfburn</execute>
+        </action>
+      </item>
+    </menu>
+    <menu id="network" label="Redes">
+      <menu execute="cbpp-x-www-browser-pipemenu" id="wwwbrowsers" label="WWW Browsers" />
+      <item label="Signal">
+        <action name="Execute">
+          <execute>flatpak run org.signal.Signal</execute>
+        </action>
+      </item>
+      <item label="Tor Browser">
+        <action name="Execute">
+          <execute>torbrowser-launcher</execute>
+        </action>
+      </item>
+      <item label="Filezilla">
+        <action name="Execute">
+          <execute>filezilla</execute>
+        </action>
+      </item>
+      <item label="Cliente BitTorrent Transmission">
+        <action name="Execute">
+          <execute>transmission-gtk</execute>
+        </action>
+      </item>
+      <item label="Cliente IRC HexChat">
+        <action name="Execute">
+          <execute>hexchat</execute>
+        </action>
+      </item>
+      <item label="Sistemas de ficheros remotos">
+        <action name="Execute">
+          <execute>gigolo</execute>
+        </action>
+      </item>
+      <item label="MEGAsync">
+        <action name="Execute">
+          <execute>megasync</execute>
+        </action>
+      </item>
+      <menu execute="cbpp-remote-desktop-pipemenu" id="remotedesktop" label="Escritorio remoto" />
+      <menu execute="cbpp-sshconfig-pipemenu" id="sshconfig" label="SSH" />
+    </menu>
+    <menu id="office" label="Oficina">
+      <menu execute="cbpp-libreoffice-pipemenu" id="libreoffice" label="LibreOffice" />
+      <item label="Google Docs">
+        <action name="Execute">
+          <execute>x-www-browser https://drive.google.com/</execute>
+        </action>
+      </item>
+      <item label="Calculadora">
+        <action name="Execute">
+          <execute>galculator</execute>
+        </action>
+      </item>
+      <item label="Visor PDF Atril">
+        <action name="Execute">
+          <execute>atril</execute>
+        </action>
+      </item>
+    </menu>
+    <separator />
+    <menu execute="cbpp-places-pipemenu" id="pipe-placesmenu" label="Lugares" />
+    <menu execute="cbpp-recent-files-pipemenu" id="pipe-recentfilesmenu" label="Archivos recientes" />
+    <separator />
+    <menu id="settings" label="Ajustes">
+      <menu execute="cbpp-compositor" id="CompositingPipeMenu" label="Compositor" />
+      <menu id="conkyconfig" label="Conky">
+        <item label="Edit .conkyrc">
+          <action name="Execute">
+            <execute>geany ~/.conkyrc</execute>
+          </action>
+        </item>
+        <item label="Reiniciar Conky">
+          <action name="Execute">
+            <execute>conkywonky</execute>
+          </action>
+        </item>
+        <separator label="¿Ayuda?" />
+        <item label="man page">
+          <action name="Execute">
+            <execute>x-terminal-emulator -e man conky</execute>
+          </action>
+        </item>
+        <item label="Documentación">
+          <action name="Execute">
+            <execute>x-www-browser http://conky.sourceforge.net/documentation.html</execute>
+          </action>
+        </item>
+      </menu>
+      <menu id="dmenuconfig" label="dmenu">
+        <item label="Edit start-up script">
+          <action name="Execute">
+            <execute>geany ~/.config/dmenu/dmenu-bind.sh</execute>
+          </action>
+        </item>
+        <separator label="¿Ayuda?" />
+        <item label="man page">
+          <action name="Execute">
+            <execute>x-terminal-emulator -e man dmenu</execute>
+          </action>
+        </item>
+      </menu>
+      <menu id="gmrunconfig" label="gmrun">
+        <item label="Edit config file">
+          <action name="Execute">
+            <execute>geany ~/.gmrunrc</execute>
+          </action>
+        </item>
+        <separator label="¿Ayuda?" />
+        <item label="man page">
+          <action name="Execute">
+            <execute>x-terminal-emulator -e man gmrun</execute>
+          </action>
+        </item>
+      </menu>
+      <menu id="obConfig" label="Openbox">
+        <item label="Editar menu.xml">
+          <action name="Execute">
+            <execute>geany ~/.config/openbox/menu.xml</execute>
+          </action>
+        </item>
+        <item label="Editar rc.xml">
+          <action name="Execute">
+            <execute>geany ~/.config/openbox/rc.xml</execute>
+          </action>
+        </item>
+        <item label="Editar autostart">
+          <action name="Execute">
+            <execute>geany ~/.config/openbox/autostart</execute>
+          </action>
+        </item>
+        <separator />
+        <item label="Editor del menú (IGU)">
+          <action name="Execute">
+            <execute>obmenu</execute>
+          </action>
+        </item>
+        <item label="Editor de ajustes de aplicación (IGU)">
+          <action name="Execute">
+            <execute>obapps</execute>
+          </action>
+        </item>
+        <item label="Herramienta de configuración (IGU)">
+          <action name="Execute">
+            <execute>obconf</execute>
+          </action>
+        </item>
+        <separator />
+        <item label="Reconfigurar">
+          <action name="Reconfigure" />
+        </item>
+        <item label="Reiniciar">
+          <action name="Restart" />
+        </item>
+      </menu>
+      <menu id="tint2config" label="tint2">
+        <item label="Editar archivo de configuración">
+          <action name="Execute">
+            <execute>geany ~/.config/tint2/tint2rc</execute>
+          </action>
+        </item>
+        <item label="Reiniciar tint2">
+          <action name="Execute">
+            <execute>tint2restart</execute>
+          </action>
+        </item>
+        <separator label="¿Ayuda?" />
+        <item label="man page">
+          <action name="Execute">
+            <execute>x-terminal-emulator -e man tint2</execute>
+          </action>
+        </item>
+        <item label="Online Help">
+          <action name="Execute">
+            <execute>x-www-browser http://code.google.com/p/tint2/wiki/Welcome</execute>
+          </action>
+        </item>
+      </menu>
+      <menu id="DisplaySettings" label="Ajustes de monitor">
+        <item label="ARandR Screen Layout Editor">
+          <action name="Execute">
+            <execute>arandr</execute>
+          </action>
+        </item>
+        <separator label="¿Ayuda?" />
+        <item label="man xrandr">
+          <action name="Execute">
+            <execute>x-terminal-emulator -e man xrandr</execute>
+          </action>
+        </item>
+      </menu>
+      <menu id="Notifications" label="Notificaciones">
+        <item label="settings">
+          <action name="Execute">
+            <execute>xfce4-notifyd-config</execute>
+          </action>
+        </item>
+      </menu>
+      <item label="Editar aplicaciones predeterminadas">
+        <action name="Execute">
+          <execute>x-terminal-emulator -e sudo update-alternatives --all</execute>
+        </action>
+      </item>
+      <item label="Ajustes de la interfaz de usuario">
+        <action name="Execute">
+          <execute>lxappearance</execute>
+        </action>
+      </item>
+      <item label="Gestión de energía">
+        <action name="Execute">
+          <execute>mate-power-preferences</execute>
+        </action>
+      </item>
+      <item label="Salvapantallas">
+        <action name="Execute">
+          <execute>xscreensaver-demo</execute>
+        </action>
+      </item>
+      <item label="Elegir fondo de pantalla">
+        <action name="Execute">
+          <execute>nitrogen ~/images/wallpapers/</execute>
+        </action>
+      </item>
+    </menu>
+    <menu id="system" label="Sistema">
+      <menu execute="cbpp-printing-pipemenu" id="PrintingPipeMenu" label="Impresoras" />
+      <item label="GParted">
+        <action name="Execute">
+          <execute>cbpp-gksudo gparted</execute>
+        </action>
+      </item>
+      <item label="Gestor de paquetes Synaptic">
+        <action name="Execute">
+          <execute>cbpp-gksudo synaptic</execute>
+        </action>
+      </item>
+    </menu>
+    <separator />
+    <item label="Bloquear pantalla">
+      <action name="Execute">
+        <execute>xscreensaver-command -lock</execute>
+      </action>
+    </item>
+    <item label="Salir">
+      <action name="Execute">
+        <execute>cbpp-exit</execute>
+      </action>
+    </item>
+  </menu>
+</openbox_menu>
