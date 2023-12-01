@@ -20,7 +20,10 @@ augroup END
 let mapleader=","
 
 " Edit my Vim settings in a new tab.
-nnoremap <leader>v <Esc>:tabe $MYVIMRC<CR>
+nnoremap <leader>v <Esc>:e $MYVIMRC<CR>
+
+" Render PDF document from a MOM file.
+nnoremap <leader>m <Esc>:!pdfmom -k -R % > output.pdf<CR>
 
 " Move between buffers with ease.
 nnoremap <leader>n <Esc>:bnext<CR>

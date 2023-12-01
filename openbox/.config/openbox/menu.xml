@@ -17,7 +17,7 @@
         <execute>x-www-browser</execute>
       </action>
     </item>
-    <item label="Explorador de archivos">
+    <item label="Gestor de archivos">
       <action name="Execute">
         <execute>thunar</execute>
       </action>
@@ -49,7 +49,7 @@
           <execute>keepassxc</execute>
         </action>
       </item>
-      <item label="Gestor de Archivadores">
+      <item label="Gestor de archivadores">
         <action name="Execute">
           <execute>file-roller</execute>
         </action>
@@ -74,7 +74,7 @@
           <execute>thunar</execute>
         </action>
       </item>
-      <item label="Gestor de archivos Thunar (superusuario)">
+      <item label="Gestor de archivos Thunar (como superusuario)">
         <action name="Execute">
           <execute>cbpp-gksudo thunar</execute>
         </action>
@@ -131,22 +131,12 @@
       </menu>
     </menu>
     <menu id="games" label="Juegos">
-      <item label="Xonotic">
-        <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun flatpak run org.xonotic.Xonotic</execute>
-        </action>
-      </item>
-      <item label="Battle for Wesnoth">
+	  <item label="Battle for Wesnoth">
         <action name="Execute">
           <execute>env LD_BIND_NOW=1 gamemoderun flatpak run org.wesnoth.Wesnoth</execute>
         </action>
       </item>
-      <item label="Steam">
-        <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun flatpak run com.valvesoftware.Steam</execute>
-        </action>
-      </item>
-      <item label="FreeDoom 1">
+	  <item label="FreeDoom 1">
         <action name="Execute">
           <execute>env LD_BIND_NOW=1 gamemoderun freedoom1</execute>
         </action>
@@ -154,6 +144,21 @@
       <item label="FreeDoom 2">
         <action name="Execute">
           <execute>env LD_BIND_NOW=1 gamemoderun freedoom2</execute>
+        </action>
+      </item>
+      <item label="Quake">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun quakespasm -basedir /home/umbral/.local/share/games/quake/</execute>
+        </action>
+      </item>
+      <item label="Steam">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun flatpak run com.valvesoftware.Steam</execute>
+        </action>
+      </item>
+      <item label="Xonotic">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun xonotic-glx</execute>
         </action>
       </item>
       <item label="Warzone 2100">
@@ -168,6 +173,11 @@
           <execute>vlc</execute>
         </action>
       </item>
+      <item label="MilkyTracker">
+        <action name="Execute">
+          <execute>milkytracker</execute>
+        </action>
+      </item>
       <item label="Control de volumen">
         <action name="Execute">
           <execute>mate-volume-control</execute>
@@ -180,18 +190,18 @@
       </item>
     </menu>
     <menu id="network" label="Redes">
-      <menu execute="cbpp-x-www-browser-pipemenu" id="wwwbrowsers" label="WWW Browsers" />
-      <item label="Signal">
-        <action name="Execute">
-          <execute>flatpak run org.signal.Signal</execute>
-        </action>
-      </item>
+      <menu execute="cbpp-x-www-browser-pipemenu" id="wwwbrowsers" label="Navegadores web" />
       <item label="Tor Browser">
         <action name="Execute">
           <execute>torbrowser-launcher</execute>
         </action>
       </item>
-      <item label="Filezilla">
+      <item label="Signal">
+        <action name="Execute">
+          <execute>flatpak run org.signal.Signal</execute>
+        </action>
+      </item>
+      <item label="FileZilla">
         <action name="Execute">
           <execute>filezilla</execute>
         </action>
@@ -255,7 +265,7 @@
           </action>
         </item>
         <separator label="¿Ayuda?" />
-        <item label="man page">
+        <item label="Página del manual">
           <action name="Execute">
             <execute>x-terminal-emulator -e man conky</execute>
           </action>
@@ -273,7 +283,7 @@
           </action>
         </item>
         <separator label="¿Ayuda?" />
-        <item label="man page">
+        <item label="Página del manual">
           <action name="Execute">
             <execute>x-terminal-emulator -e man dmenu</execute>
           </action>
@@ -286,7 +296,7 @@
           </action>
         </item>
         <separator label="¿Ayuda?" />
-        <item label="man page">
+        <item label="Página del manual">
           <action name="Execute">
             <execute>x-terminal-emulator -e man gmrun</execute>
           </action>
@@ -344,7 +354,7 @@
           </action>
         </item>
         <separator label="¿Ayuda?" />
-        <item label="man page">
+        <item label="Página del manual">
           <action name="Execute">
             <execute>x-terminal-emulator -e man tint2</execute>
           </action>
