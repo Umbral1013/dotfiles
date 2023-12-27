@@ -34,6 +34,11 @@
     </item>
     <separator />
     <menu id="accessories" label="Accesorios">
+	  <item label="BleachBit">
+		<action name="Execute">
+		  <execute>flatpak run org.bleachbit.BleachBit</execute>
+		</action>
+	  </item>
       <item label="Búsqueda de archivos Catfish">
         <action name="Execute">
           <execute>catfish</execute>
@@ -131,12 +136,12 @@
       </menu>
     </menu>
     <menu id="games" label="Juegos">
-	  <item label="Battle for Wesnoth">
+      <item label="Battle for Wesnoth">
         <action name="Execute">
           <execute>env LD_BIND_NOW=1 gamemoderun flatpak run org.wesnoth.Wesnoth</execute>
         </action>
       </item>
-	  <item label="FreeDoom 1">
+      <item label="FreeDoom 1">
         <action name="Execute">
           <execute>env LD_BIND_NOW=1 gamemoderun freedoom1</execute>
         </action>
@@ -146,9 +151,39 @@
           <execute>env LD_BIND_NOW=1 gamemoderun freedoom2</execute>
         </action>
       </item>
+      <item label="Ultimate Doom">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun dsda-doom -iwad ~/.local/share/games/doom/doom.wad</execute>
+        </action>
+      </item>
+	  <item label="Doom 2">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun dsda-doom -iwad ~/.local/share/games/doom/doom2.wad</execute>
+        </action>
+      </item>
+      <item label="Minetest">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun flatpak run net.minetest.Minetest</execute>
+        </action>
+      </item>
       <item label="Quake">
         <action name="Execute">
           <execute>env LD_BIND_NOW=1 gamemoderun quakespasm -basedir /home/umbral/.local/share/games/quake/</execute>
+        </action>
+      </item>
+      <item label="Quake: Scourge of Armagon">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun quakespasm -game hipnotic -basedir /home/umbral/.local/share/games/quake/</execute>
+        </action>
+      </item>
+      <item label="Quake: Dissolution of Eternity">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun quakespasm -game rogue -basedir /home/umbral/.local/share/games/quake/</execute>
+        </action>
+      </item>
+       <item label="Quake: Arcane Dimenssions">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 gamemoderun quakespasm -game ad -basedir /home/umbral/.local/share/games/quake/</execute>
         </action>
       </item>
       <item label="Steam">
@@ -158,12 +193,7 @@
       </item>
       <item label="Xonotic">
         <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun xonotic-glx</execute>
-        </action>
-      </item>
-      <item label="Warzone 2100">
-        <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun flatpak run net.wz2100.wz2100</execute>
+          <execute>env LD_BIND_NOW=1 gamemoderun flatpak run org.xonotic.Xonotic</execute>
         </action>
       </item>
     </menu>

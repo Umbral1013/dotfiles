@@ -23,7 +23,7 @@ let mapleader=","
 nnoremap <leader>v <Esc>:e $MYVIMRC<CR>
 
 " Render PDF document from a MOM file.
-nnoremap <leader>m <Esc>:!pdfmom -k -R % > output.pdf<CR>
+nnoremap <leader>mom <Esc>:!pdfmom -k -R % > output.pdf<CR>
 
 " Move between buffers with ease.
 nnoremap <leader>n <Esc>:bnext<CR>
