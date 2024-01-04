@@ -84,6 +84,11 @@
           <execute>cbpp-gksudo thunar</execute>
         </action>
       </item>
+      <item label="Winefile">
+        <action name="Execute">
+          <execute>env LD_BIND_NOW=1 mesa_glthread=true gamemoderun flatpak run --command=winefile org.winehq.Wine</execute>
+        </action>
+      </item>
     </menu>
     <menu id="graphics" label="Gráficos">
       <item label="GIMP">
@@ -188,7 +193,7 @@
       </item>
       <item label="Steam">
         <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun flatpak run com.valvesoftware.Steam</execute>
+          <execute>flatpak run com.valvesoftware.Steam</execute>
         </action>
       </item>
       <item label="Xonotic">

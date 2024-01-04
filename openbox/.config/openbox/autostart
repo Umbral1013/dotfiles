@@ -71,5 +71,5 @@ conky -q &
 ## Hacks for notifyd since it switched to systemd
 /usr/lib/*/xfce4/notifyd/xfce4-notifyd &
 
-## Start MEGAsync
-#megasync &
+## Numlock activation
+numlockx &
