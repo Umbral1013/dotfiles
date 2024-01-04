@@ -5,3 +5,4 @@
 
 # Ignore mpv files to resume videos.
 mpv/.config/mpv/watch_later
+vim/.vim/spell
