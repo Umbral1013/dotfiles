@@ -34,11 +34,6 @@
     </item>
     <separator />
     <menu id="accessories" label="Accesorios">
-	  <item label="BleachBit">
-		<action name="Execute">
-		  <execute>flatpak run org.bleachbit.BleachBit</execute>
-		</action>
-	  </item>
       <item label="Búsqueda de archivos Catfish">
         <action name="Execute">
           <execute>catfish</execute>
@@ -146,24 +141,9 @@
           <execute>env LD_BIND_NOW=1 gamemoderun flatpak run org.wesnoth.Wesnoth</execute>
         </action>
       </item>
-      <item label="FreeDoom 1">
+      <item label="Doom Launcher">
         <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun freedoom1</execute>
-        </action>
-      </item>
-      <item label="FreeDoom 2">
-        <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun freedoom2</execute>
-        </action>
-      </item>
-      <item label="Ultimate Doom">
-        <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun dsda-doom -iwad ~/.local/share/games/doom/doom.wad</execute>
-        </action>
-      </item>
-	  <item label="Doom 2">
-        <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun dsda-doom -iwad ~/.local/share/games/doom/doom2.wad</execute>
+          <execute>doom-launcher</execute>
         </action>
       </item>
       <item label="Minetest">
@@ -186,7 +166,7 @@
           <execute>env LD_BIND_NOW=1 gamemoderun quakespasm -game rogue -basedir /home/umbral/.local/share/games/quake/</execute>
         </action>
       </item>
-       <item label="Quake: Arcane Dimenssions">
+      <item label="Quake: Arcane Dimenssions">
         <action name="Execute">
           <execute>env LD_BIND_NOW=1 gamemoderun quakespasm -game ad -basedir /home/umbral/.local/share/games/quake/</execute>
         </action>

@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+# TÍTULO DEL DOCUMENTO: Doom Launcher.
+# NOMBRE DEL ARCHIVO: doom-launcher.sh
+# AUTOR: Umbral1013.
+# PROPÓSITO: Lanzar la versión de Doom que yo quiera a través de la terminal.
+# FECHA: sáb 06 ene 2024 03:40:12
+# HISTORIAL DEL DOCUMENTO:
+#     Versión - Fecha - Comentarios
+#     01 - 06/01/2024 - Se crea el documento.
+
+PS3='Elige la versión de Doom que quieres jugar: '
+options=("The Ultimate Doom" \
+    "SIGIL 1.21" \
+    "SIGIL II" \
+    "Doom II - Hell on Earth" \
+    "Salir")
+# Sinceramente, no tengo ni idea de cómo funciona ésto.
+# Debería revisar la documentación
+select opt in "${options[@]}"
+do
+    case $opt in
+        "The Ultimate Doom")
+            env mesa_glthread=true \
+            LD_BIND_NOW=1 \
+            gamemoderun dsda-doom \
+            -iwad ~/.local/share/games/doom/doom.wad
+            ;;
+        "SIGIL 1.21")
+            env mesa_glthread=true \
+            LD_BIND_NOW=1 \
+            gamemoderun dsda-doom \
+            -iwad ~/.local/share/games/doom/doom.wad \
+            -file ~/.local/share/games/doom/sigil_compat_v1_21.wad
+            ;;
+        "SIGIL II")
+            env mesa_glthread=true \
+            LD_BIND_NOW=1 \
+            gamemoderun dsda-doom \
+            -iwad ~/.local/share/games/doom/doom.wad \
+            -file ~/.local/share/games/doom/sigil_ii_v1_0.wad
+            ;;
+        "Doom II - Hell on Earth")
+            env mesa_glthread=true \
+            LD_BIND_NOW=1 \
+            gamemoderun dsda-doom \
+            -iwad ~/.local/share/games/doom/doom2.wad
+            ;;
+        "Salir")
+            break
+            ;;
+        *) echo "Opcion invalida $REPLY";;
+    esac
+done
