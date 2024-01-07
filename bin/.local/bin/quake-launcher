@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+# TÍTULO DEL DOCUMENTO: Quake Launcher.
+# NOMBRE DEL ARCHIVO: quake-launcher.sh
+# AUTOR: Umbral1013.
+# PROPÓSITO: Lanzar la versión de Quake que yo quiera a través de la terminal.
+# FECHA: sáb 06 ene 2024 17:46:06
+# HISTORIAL DEL DOCUMENTO:
+#     Versión - Fecha - Comentarios
+#     01 - 06/01/2024 - Se crea el documento.
+
+PS3='Elige la versión de Quake que quieres jugar: '
+options=("Quake" \
+    "Quake: Scourge of Armagon" \
+    "Quake: Dissolution of Eternity" \
+    "Quake: Arcane Dimenssions" \
+    "Salir")
+# Sinceramente, no tengo ni idea de cómo funciona ésto.
+# Debería revisar la documentación
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Quake")
+            env mesa_glthread=true \
+            LD_BIND_NOW=1 \
+            gamemoderun quakespasm \
+            -fitz \
+            -basedir /home/umbral/.local/share/games/quake/
+            ;;
+        "Quake: Scourge of Armagon")
+            env mesa_glthread=true \
+            LD_BIND_NOW=1 \
+            gamemoderun quakespasm \
+            -fitz \
+            -game hipnotic \
+            -basedir /home/umbral/.local/share/games/quake/
+            ;;
+        "Quake: Dissolution of Eternity")
+            env mesa_glthread=true \
+            LD_BIND_NOW=1 \
+            gamemoderun quakespasm \
+            -fitz \
+            -game rogue \
+            -basedir /home/umbral/.local/share/games/quake/
+            ;;
+        "Quake: Arcane Dimenssions")
+            env mesa_glthread=true \
+            LD_BIND_NOW=1 \
+            gamemoderun quakespasm \
+            -fitz \
+            -game ad \
+            -basedir /home/umbral/.local/share/games/quake/
+            ;;
+        "Salir")
+            break
+            ;;
+        *) echo "Opcion invalida $REPLY";;
+    esac
+done

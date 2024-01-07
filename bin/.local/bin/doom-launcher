@@ -14,6 +14,8 @@ options=("The Ultimate Doom" \
     "SIGIL 1.21" \
     "SIGIL II" \
     "Doom II - Hell on Earth" \
+    "Freedoom 1" \
+    "Freedoom 2" \
     "Salir")
 # Sinceramente, no tengo ni idea de cómo funciona ésto.
 # Debería revisar la documentación
@@ -45,6 +47,16 @@ do
             LD_BIND_NOW=1 \
             gamemoderun dsda-doom \
             -iwad ~/.local/share/games/doom/doom2.wad
+            ;;
+        "Freedoom 1")
+            env mesa_glthread=true \
+            LD_BIND_NOW=1 \
+            gamemoderun freedoom1
+            ;;
+        "Freedoom 2")
+            env mesa_glthread=true \
+            LD_BIND_NOW=1 \
+            gamemoderun freedoom2
             ;;
         "Salir")
             break

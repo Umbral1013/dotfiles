@@ -143,7 +143,7 @@
       </item>
       <item label="Doom Launcher">
         <action name="Execute">
-          <execute>doom-launcher</execute>
+          <execute>terminator -u -x doom-launcher</execute>
         </action>
       </item>
       <item label="Minetest">
@@ -151,24 +151,9 @@
           <execute>env LD_BIND_NOW=1 gamemoderun flatpak run net.minetest.Minetest</execute>
         </action>
       </item>
-      <item label="Quake">
+      <item label="Quake Launcher">
         <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun quakespasm -basedir /home/umbral/.local/share/games/quake/</execute>
-        </action>
-      </item>
-      <item label="Quake: Scourge of Armagon">
-        <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun quakespasm -game hipnotic -basedir /home/umbral/.local/share/games/quake/</execute>
-        </action>
-      </item>
-      <item label="Quake: Dissolution of Eternity">
-        <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun quakespasm -game rogue -basedir /home/umbral/.local/share/games/quake/</execute>
-        </action>
-      </item>
-      <item label="Quake: Arcane Dimenssions">
-        <action name="Execute">
-          <execute>env LD_BIND_NOW=1 gamemoderun quakespasm -game ad -basedir /home/umbral/.local/share/games/quake/</execute>
+          <execute>terminator -u -x quake-launcher</execute>
         </action>
       </item>
       <item label="Steam">
