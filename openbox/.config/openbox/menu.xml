@@ -79,7 +79,7 @@
           <execute>cbpp-gksudo thunar</execute>
         </action>
       </item>
-      <item label="Winefile">
+      <item label="Gestor de archivos Wine">
         <action name="Execute">
           <execute>env LD_BIND_NOW=1 mesa_glthread=true gamemoderun flatpak run --command=winefile org.winehq.Wine</execute>
         </action>
@@ -231,6 +231,11 @@
     </menu>
     <menu id="office" label="Oficina">
       <menu execute="cbpp-libreoffice-pipemenu" id="libreoffice" label="LibreOffice" />
+      <item label="LibreOffice (Flatpak)">
+        <action name="Execute">
+          <execute>flatpak run org.libreoffice.LibreOffice</execute>
+        </action>
+      </item>
       <item label="Google Docs">
         <action name="Execute">
           <execute>x-www-browser https://drive.google.com/</execute>

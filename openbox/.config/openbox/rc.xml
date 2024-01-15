@@ -328,7 +328,7 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-    <keybind key="A-F2">
+    <keybind key="W-r">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
@@ -418,7 +418,7 @@
         <command>mate-volume-control</command>
       </action>
     </keybind>
-    <keybind key="W-x">
+    <keybind key="W-q">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
