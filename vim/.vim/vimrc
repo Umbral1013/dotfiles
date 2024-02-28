@@ -25,6 +25,10 @@ nnoremap <leader>v <Esc>:e $MYVIMRC<CR>
 " Render PDF document from a MOM file.
 nnoremap <leader>mom <Esc>:!pdfmom -k -R % > output.pdf<CR>
 
+" Compile C program.
+nnoremap <leader>gcc <Esc>:!gcc -Wall % -o a.out<CR>
+nnoremap <leader>run <Esc>:!./a.out<CR>
+
 " Move between buffers with ease.
 nnoremap <leader>n <Esc>:bnext<CR>
 nnoremap <leader>p <Esc>:bprevious<CR>
@@ -91,6 +95,7 @@ set showmatch
 set backupcopy=auto
 set mouse=a     " Activate mouse inputs.
 set path+=**	" Fuzzy finder.
+set autoindent
 
 " Ignore case when searching for a pattern.
 set smartcase
@@ -99,13 +104,7 @@ set ignorecase
 " Word completion given a dictionary. Enabling spell is required.
 set spelllang=es_mx,en_us
 set complete+=k
-
-" This produces only soft tab stops.
-" Via https://vim.fandom.com/wiki/Indenting_source_code#Indentation_without_hard_tabs
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set autoindent
+set completeopt=longest,menuone
 
 " Avoid all the hit-enter prompts caused by file messages, and some other
 " messages.
@@ -124,6 +123,14 @@ set wildoptions=pum
 " Show Vim in truecolor if it is possible.
 if (has("termguicolors"))
     set termguicolors
+endif
+
+if (has("gui_running"))
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
+    set guifont=IBM\ Plex\ Mono\ 12
 endif
 
 set background=dark
