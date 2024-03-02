@@ -1,9 +1,8 @@
 "
-" ~/.vimrc
+" vimrc
 "
 
 " Let us begin with a nice base.
-unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
 " Match even more expressions with the '%' motion.
@@ -11,44 +10,53 @@ if has('syntax') && has('eval')
     packadd! matchit
 endif
 
-" Break lines at 78 characters. Only for generic text documents.
-augroup vimrcEx
-    au!
-    autocmd FileType text setlocal textwidth=78
-augroup END
+" Show Vim in truecolor if it is possible.
+if (has("termguicolors"))
+    set termguicolors
+endif
 
-let mapleader=","
+" For Gvim.
+if (has("gui_running"))
+    set guioptions-=m  " Remove menu bar.
+    set guioptions-=T  " Remove toolbar.
+    set guioptions-=r  " Remove right-hand scroll bar.
+    set guioptions-=L  " Remove left-hand scroll bar.
+    set guifont=IBM\ Plex\ Mono\ 12
+endif
 
-" Edit my Vim settings in a new tab.
-nnoremap <leader>v <Esc>:e $MYVIMRC<CR>
+set title
+set cursorline
+set number relativenumber
+set showmatch
+set backupcopy=auto
+set mouse=a     " Activate mouse inputs.
+set path+=**	" Fuzzy finder.
+set autoindent
+set wildoptions=pum " Only works on Vim9+.
 
-" Render PDF document from a MOM file.
-nnoremap <leader>mom <Esc>:!pdfmom -k -R % > output.pdf<CR>
+" Ignore case when searching for a pattern.
+set smartcase
+set ignorecase
 
-" Compile C program.
-nnoremap <leader>gcc <Esc>:!gcc -Wall % -o a.out<CR>
-nnoremap <leader>run <Esc>:!./a.out<CR>
+" Word completion given a dictionary. Enabling spell is required.
+set spelllang=es_mx,en_us
+set complete+=k
+set completeopt=longest,menuone
 
-" Move between buffers with ease.
-nnoremap <leader>n <Esc>:bnext<CR>
-nnoremap <leader>p <Esc>:bprevious<CR>
+" Avoid all the hit-enter prompts caused by file messages, and some other
+" messages.
+" Read the Vim help file for more information.
+set shortmess+=acs
 
-" Toggle spellcheck on and off using <F5>.
-" Via https://vim.fandom.com/wiki/Toggle_spellcheck_with_function_keys
-nnoremap <silent> <F5>
-            \ <Esc>:setlocal spell!
-            \ spelllang=es_mx,en_us<CR>
+" Wrap long lines and preserve their indentation.
+" Via https://retracile.net/wiki/VimBreakIndent
+set wrap
+let &showbreak='+++ '
+set breakindent
+set linebreak
 
-" Snippets.
-nnoremap <leader>date
-            \ <Esc>:put =strftime('%c')
-            \ <CR>kJ
-nnoremap <leader>html
-            \ <Esc>:-1read $HOME/dotfiles/snippets/skeleton.html
-            \ <CR>4jcit
-nnoremap <leader>meta
-            \ <Esc>:-1read $HOME/dotfiles/snippets/metadata.txt
-            \ <CR>A
+set background=dark
+colorscheme habamax
 
 " Groff preferences.
 let nroff_is_groff=1
@@ -88,50 +96,53 @@ let g:ale_fixers={
             \ 'css': ['prettier']
             \ }
 
-set title
-set cursorline
-set number relativenumber
-set showmatch
-set backupcopy=auto
-set mouse=a     " Activate mouse inputs.
-set path+=**	" Fuzzy finder.
-set autoindent
+" Break lines at 78 characters. Only for generic text documents.
+augroup vimrcEx
+    au!
+    autocmd FileType text setlocal textwidth=78
+augroup END
 
-" Ignore case when searching for a pattern.
-set smartcase
-set ignorecase
+let mapleader=","
 
-" Word completion given a dictionary. Enabling spell is required.
-set spelllang=es_mx,en_us
-set complete+=k
-set completeopt=longest,menuone
+" Edit my Vim settings in a new tab.
+nnoremap <leader>v <Esc>:e $MYVIMRC<CR>
 
-" Avoid all the hit-enter prompts caused by file messages, and some other
-" messages.
-" Read the Vim help file for more information.
-set shortmess+=acs
+" Move between buffers with ease.
+nnoremap <leader>n <Esc>:bnext<CR>
+nnoremap <leader>p <Esc>:bprevious<CR>
 
-" Wrap long lines and preserve their indentation.
-" Via https://retracile.net/wiki/VimBreakIndent
-set wrap
-let &showbreak='+++ '
-set breakindent
-set linebreak
+" Show a line at the 80 character mark.
+nnoremap <leader>cc :set colorcolumn=80<CR>
+nnoremap <leader>ncc :set colorcolumn-=80<CR>
 
-set wildoptions=pum
+" Render PDF document from a MOM file.
+nnoremap <leader>mom <Esc>:!pdfmom -k -R % > output.pdf<CR>
 
-" Show Vim in truecolor if it is possible.
-if (has("termguicolors"))
-    set termguicolors
-endif
+" Snippets.
+nnoremap <leader>date
+            \ <Esc>:put =strftime('%c')
+            \ <CR>kJ
+nnoremap <leader>html
+            \ <Esc>:-1read $HOME/dotfiles/snippets/skeleton.html
+            \ <CR>4jcit
+nnoremap <leader>meta
+            \ <Esc>:-1read $HOME/dotfiles/snippets/metadata.txt
+            \ <CR>A
 
-if (has("gui_running"))
-    set guioptions-=m  "remove menu bar
-    set guioptions-=T  "remove toolbar
-    set guioptions-=r  "remove right-hand scroll bar
-    set guioptions-=L  "remove left-hand scroll bar
-    set guifont=IBM\ Plex\ Mono\ 12
-endif
+" Toggle spellcheck on and off using <F5>.
+" Via https://vim.fandom.com/wiki/Toggle_spellcheck_with_function_keys
+nnoremap <silent> <F5>
+            \ <Esc>:setlocal spell!
+            \ spelllang=es_mx,en_us<CR>
 
-set background=dark
-colorscheme habamax
+" Automatically insert header gates for C/C++.
+" Via
+" https://vim.fandom.com/wiki/Automatic_insertion_of_C/C%2B%2B_header_gates
+function! s:insert_gates()
+  let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+  execute "normal! i#ifndef " . gatename
+  execute "normal! o#define " . gatename . " "
+  execute "normal! Go#endif /* " . gatename . " */"
+  normal! kk
+endfunction
+autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
