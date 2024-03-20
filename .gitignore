@@ -3,5 +3,8 @@
 *.save
 *.swp
 
+# Ignore netrw history.
+vim/.vim/.netrwhist
+
 # Ignore mpv files to resume videos.
 mpv/.config/mpv/watch_later
