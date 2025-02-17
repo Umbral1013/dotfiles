@@ -21,6 +21,7 @@ if (has("gui_running"))
 	set guioptions-=T  " Remove toolbar.
 	set guioptions-=r  " Remove right-hand scroll bar.
 	set guioptions-=L  " Remove left-hand scroll bar.
+	set guifont=Source\ Code\ Pro\ 11
 endif
 
 set title
@@ -28,9 +29,10 @@ set cursorline
 set number relativenumber
 set showmatch
 set backupcopy=auto
+set autochdir
 set mouse=a     " Activate mouse inputs.
 set path+=**	" Fuzzy finder.
-set autoindent
+set smartindent
 set wildoptions=pum " Only works on Vim9+.
 
 " Ignore case when searching for a pattern.
@@ -41,6 +43,9 @@ set ignorecase
 set spelllang=es_mx,en_us
 set complete+=k
 set completeopt=longest,menuone
+
+" C++ tags.
+set tags+=~/.vim/tags/cpp,./tags,./../tags,./*/tags
 
 " Avoid all the hit-enter prompts caused by file messages, and some other
 " messages.
@@ -55,7 +60,7 @@ set breakindent
 set linebreak
 
 set background=dark
-colorscheme habamax
+colorscheme torte
 
 " Groff preferences.
 let nroff_is_groff=1
@@ -71,13 +76,23 @@ hi def nroffDefSpecial
 			\ cterm=italic,bold
 			\ gui=reverse,bold
 
+" OmniCppComplete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1	" show function parameters
+let OmniCpp_MayCompleteDot = 1		" autocomplete after .
+let OmniCpp_MayCompleteArrow = 1	" autocomplete after ->
+let OmniCpp_MayCompleteScope = 1	" autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+
 " netrw preferences. Check out netrw-browse-maps in the Vim help file too.
 let g:netrw_browsex_viewer="/usr/bin/xdg-open"
 let g:netrw_banner=0
 let g:netrw_browse_split=4
 let g:netrw_altv=1
 let g:netrw_liststyle=3
-let g:netrw_winsize=30
+let g:netrw_winsize=25
 let g:netrw_list_hide=netrw_gitignore#Hide()
 
 " Linter and fixer options.
@@ -86,13 +101,15 @@ let g:ale_linters={
 			\ 'python': ['flake8'],
 			\ 'lua': ['luac'],
 			\ 'html': ['vscodehtml'],
-			\ 'css': ['vscodecss']
+			\ 'css': ['vscodecss'],
+			\ 'cpp': ['cppcheck']
 			\ }
 let g:ale_fixers={
 			\ 'python': ['yapf'],
 			\ 'lua': ['lua-format'],
 			\ 'html': ['prettier'],
-			\ 'css': ['prettier']
+			\ 'css': ['prettier'],
+			\ '*': ['remove_trailing_lines', 'trim_whitespace']
 			\ }
 
 " Break lines at 78 characters. Only for generic text documents.
@@ -138,6 +155,9 @@ nnoremap <silent> <F7>
 nnoremap <silent> <F5>
 			\ <Esc>:setlocal spell!
 			\ spelllang=es_mx,en_us<CR>
+
+" Building custom tags for C++ project with Ctrl-F12
+map <leader>tags :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extras=+q .<CR>
 
 " Automatically insert header gates for C/C++.
 " Via
