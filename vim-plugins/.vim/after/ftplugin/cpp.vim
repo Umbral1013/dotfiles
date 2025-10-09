@@ -1,3 +1,3 @@
 " OmniCppComplete initialization
 call omni#cpp#complete#Init()
-set cinoptions=g0
+set cinoptions=:0,g0
