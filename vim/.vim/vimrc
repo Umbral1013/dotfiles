@@ -60,7 +60,7 @@ set breakindent
 set linebreak
 
 set background=dark
-colorscheme torte
+colorscheme desert
 
 " Groff preferences.
 let nroff_is_groff=1
@@ -93,22 +93,24 @@ let g:netrw_browse_split=4
 let g:netrw_altv=1
 let g:netrw_liststyle=3
 let g:netrw_winsize=25
-let g:netrw_list_hide=netrw_gitignore#Hide()
 
 " Linter and fixer options.
+let g:ale_completion_enabled=1
+let g:ale_completion_delay=30
 let g:ale_fix_on_save=1
 let g:ale_linters={
-			\ 'python': ['flake8'],
+			\ 'python': ['pylsp'],
 			\ 'lua': ['luac'],
 			\ 'html': ['vscodehtml'],
 			\ 'css': ['vscodecss'],
 			\ 'cpp': ['cppcheck']
 			\ }
 let g:ale_fixers={
-			\ 'python': ['yapf'],
+			\ 'python': ['autopep8'],
 			\ 'lua': ['lua-format'],
 			\ 'html': ['prettier'],
 			\ 'css': ['prettier'],
+			\ 'cpp' : ['astyle'],
 			\ '*': ['remove_trailing_lines', 'trim_whitespace']
 			\ }
 
@@ -144,11 +146,11 @@ nnoremap <leader>cbase
 			\ <Esc>:-1read $HOME/dotfiles/snippets/base.c
 			\ <CR>viB<Esc>O
 
-" Show a line at the 80 character mark.
+" Show a line at the 100 character mark.
 nnoremap <silent> <F6>
-			\ <Esc>:setlocal colorcolumn=80<CR>
+			\ <Esc>:setlocal colorcolumn=100<CR>
 nnoremap <silent> <F7>
-			\ <Esc>:setlocal colorcolumn-=80<CR>
+			\ <Esc>:setlocal colorcolumn-=100<CR>
 
 " Toggle spellcheck on and off using <F5>.
 " Via https://vim.fandom.com/wiki/Toggle_spellcheck_with_function_keys
@@ -156,7 +158,7 @@ nnoremap <silent> <F5>
 			\ <Esc>:setlocal spell!
 			\ spelllang=es_mx,en_us<CR>
 
-" Building custom tags for C++ project with Ctrl-F12
+" Building custom tags for C++ project with ,tags
 map <leader>tags :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extras=+q .<CR>
 
 " Automatically insert header gates for C/C++.
@@ -166,7 +168,7 @@ function! s:insert_gates()
 	let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
 	execute "normal! i#ifndef " . gatename
 	execute "normal! o#define " . gatename . " "
-	execute "normal! Go#endif /* " . gatename . " */"
+	execute "normal! Go#endif // " . gatename . " "
 	normal! kk
 endfunction
 autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
