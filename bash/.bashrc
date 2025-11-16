@@ -29,12 +29,15 @@ export HISTCONTROL=ignoreboth:erasedups
 
 source $HOME/.local/bin/git-prompt.sh
 source $HOME/.local/bin/git-completion.sh
-PS1='\u@\h:\W$(__git_ps1 " (%s)")\$ '
+export PROMPT_COMMAND='__git_ps1 "\u@\h:\W" "$ "'
 
 # Show hints about the current dirty state in color.
 export GIT_PS1_SHOWCOLORHINTS=true
 # Show status of current git repository compared to upstream.
-export GIT_PS1_SHOWUPSTREAM=auto
+export GIT_PS1_SHOWUPSTREAM="verbose"
+
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
 
 mkcd() { mkdir "$@"&&cd "$@";}  # mkdir && cd at the same time.
 
