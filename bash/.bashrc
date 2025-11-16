@@ -29,7 +29,7 @@ export HISTCONTROL=ignoreboth:erasedups
 
 source $HOME/.local/bin/git-prompt.sh
 source $HOME/.local/bin/git-completion.sh
-export PROMPT_COMMAND='__git_ps1 "\u@\h:\W" "$ "'
+export PROMPT_COMMAND='__git_ps1 "\u@\h:\W" "> "'
 
 # Show hints about the current dirty state in color.
 export GIT_PS1_SHOWCOLORHINTS=true
