@@ -104,7 +104,6 @@ let g:ale_linters={
 			\ 'html': ['vscodehtml'],
 			\ 'css': ['vscodecss'],
 			\ 'cpp': ['cppcheck'],
-			\ 'php': ['php_cs_fixer']
 			\ }
 let g:ale_fixers={
 			\ 'python': ['autopep8'],
@@ -112,6 +111,7 @@ let g:ale_fixers={
 			\ 'html': ['prettier'],
 			\ 'css': ['prettier'],
 			\ 'cpp' : ['astyle'],
+			\ 'php': ['php_cs_fixer'],
 			\ '*': ['remove_trailing_lines', 'trim_whitespace']
 			\ }
 
