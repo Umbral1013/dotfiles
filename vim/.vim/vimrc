@@ -61,6 +61,7 @@ set linebreak
 
 set background=dark
 colorscheme desert
+highlight Comment cterm=italic
 
 " Groff preferences.
 let nroff_is_groff=1
