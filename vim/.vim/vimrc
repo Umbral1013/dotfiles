@@ -60,7 +60,7 @@ set breakindent
 set linebreak
 
 set background=dark
-colorscheme desert
+colorscheme zenburn
 
 " Groff preferences.
 let nroff_is_groff=1
