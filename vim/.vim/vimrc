@@ -60,7 +60,7 @@ set breakindent
 set linebreak
 
 set background=dark
-colorscheme desert
+colorscheme unokai
 highlight Comment cterm=italic
 
 " Groff preferences.
@@ -76,6 +76,9 @@ hi def nroffDefSpecial
 			\ term=italic,bold
 			\ cterm=italic,bold
 			\ gui=reverse,bold
+
+" PHP options.
+let PHP_removeCRwhenUnix = 1
 
 " OmniCppComplete
 let OmniCpp_NamespaceSearch = 1
